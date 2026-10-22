@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>4 KORNERS DESIGN STUDIO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link id="gf" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=block">
+<style>
+:root{--bg:transparent;--fg:#555555;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html,body{margin:0;height:100%;overflow:hidden;background:transparent}
+body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;touch-action:none;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none;overscroll-behavior:none}
+canvas{display:block;width:100%;height:100%;position:relative;z-index:1}
+p{z-index:2}
+p{position:fixed;left:0;right:0;bottom:calc(12px + env(safe-area-inset-bottom,0px));margin:0;text-align:center;color:var(--fg);font-size:11px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;opacity:.55;pointer-events:none;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}
+</style>
+</head>
+<body>
+<p>Move through it · click or tap for a shockwave</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(async function(){
+// wait for the lettering font so the text is sampled identically on every device
+await new Promise(r => { const l = document.getElementById('gf'); if (l.sheet) r(); else { l.onload = r; l.onerror = r; setTimeout(r, 3000); } });
+try { await document.fonts.load('200px "Archivo Black"', 'KORNERS DESIGN STUDIO 4'); } catch (e) {}
+const N = 320000;
+const renderer = new THREE.WebGLRenderer({antialias:true, alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+document.body.prepend(renderer.domElement);
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
+camera.position.z = 7;
+
+// Build the "home" point cloud by sampling pixels of the text "4 KORNERS / DESIGN / STUDIO"
+const home = new Float32Array(N*3), pos = new Float32Array(N*3), vel = new Float32Array(N*3), col = new Float32Array(N*3);
+const LINES = ['KORNERS', 'DESIGN', 'STUDIO'];
+const TW = 1200, TH = 760, TEXT_W = 8;
+const tc = document.createElement('canvas'); tc.width = TW; tc.height = TH;
+const tx = tc.getContext('2d');
+const FONT = '"Archivo Black", "Arial Black", Impact, "Helvetica Neue", Arial, sans-serif';
+const fs = 200, lh = fs*1.08, gap = fs*0.2, sx4 = 2.0;
+tx.font = '400 ' + fs + 'px ' + FONT; tx.textAlign = 'left'; tx.textBaseline = 'alphabetic'; tx.fillStyle = '#000';
+const capH = tx.measureText('K').actualBoundingBoxAscent;
+const wText = Math.max(...LINES.map(t => tx.measureText(t).width));
+const m4 = tx.measureText('4'), asc4 = m4.actualBoundingBoxAscent, desc4 = m4.actualBoundingBoxDescent;
+const Hb = 2*lh + capH, w4 = m4.width*sx4, total = w4 + gap + wText;
+const kk = Math.min(TW*0.94/total, TH*0.92/Hb);
+tx.save(); tx.translate(TW/2, TH/2); tx.scale(kk, kk); tx.translate(-total/2, -Hb/2);
+LINES.forEach((t, i) => tx.fillText(t, w4 + gap, capH + i*lh));
+tx.save(); tx.scale(sx4, Hb/(asc4 + desc4)); tx.fillText('4', 0, asc4); tx.restore();
+tx.restore();
+const img = tx.getImageData(0, 0, TW, TH).data, cand = [];
+const inside = new Uint8Array(TW*TH);
+for (let py = 0; py < TH; py++) for (let px = 0; px < TW; px++) if (img[(py*TW+px)*4+3] > 128) { inside[py*TW+px] = 1; cand.push(px, py); }
+// distance-to-edge (two-pass chamfer) -> rounded, puffy 3D depth for the letters
+const dist = new Float32Array(TW*TH);
+for (let i = 0; i < dist.length; i++) dist[i] = inside[i] ? 9999 : 0;
+for (let y = 1; y < TH-1; y++) for (let x = 1; x < TW-1; x++) { const i = y*TW+x; if (dist[i]) dist[i] = Math.min(dist[i], dist[i-1]+1, dist[i-TW]+1, dist[i-TW-1]+1.414, dist[i-TW+1]+1.414); }
+for (let y = TH-2; y > 0; y--) for (let x = TW-2; x > 0; x--) { const i = y*TW+x; if (dist[i]) dist[i] = Math.min(dist[i], dist[i+1]+1, dist[i+TW]+1, dist[i+TW+1]+1.414, dist[i+TW-1]+1.414); }
+const BEV = 38, HALF = 0.45, hgt = new Float32Array(TW*TH);
+for (let i = 0; i < hgt.length; i++) if (dist[i]) { const t = 1 - Math.min(dist[i], BEV)/BEV; hgt[i] = HALF*Math.sqrt(Math.max(0, 1 - t*t)); }
+const S = TEXT_W / TW, cn = cand.length/2;
+const LD = new THREE.Vector3(0.45, 0.75, 0.6).normalize();
+for (let i = 0; i < N; i++) {
+  const j = Math.floor(Math.random()*cn)*2, cx = cand[j], cy = cand[j+1], idx = cy*TW + cx;
+  const h = hgt[idx];
+  const gx = (hgt[idx+1] - hgt[idx-1])/(2*S), gy = -(hgt[idx+TW] - hgt[idx-TW])/(2*S);
+  const interior = Math.random() < 0.15;
+  const side = Math.random() < 0.88 ? 1 : -1;
+  const x = (cx + Math.random() - TW/2)*S, y = -(cy + Math.random() - TH/2)*S;
+  const z = interior ? (Math.random()*2 - 1)*h : side*h;
+  home.set([x,y,z], i*3);
+  let nx = -gx, ny = -gy, nz = side; const nl = Math.hypot(nx, ny, nz); nx /= nl; ny /= nl; nz /= nl;
+  let d = interior ? 0.05 : Math.max(0, nx*LD.x + ny*LD.y + nz*LD.z);
+  let t = 0.16 + 0.72*d + Math.pow(1 - Math.abs(nz), 2)*0.2 + (Math.random() - 0.5)*0.16;
+  t = Math.min(1, Math.max(0, t));
+  col.set([0.12 + t*0.46, 0.15 + t*0.47, 0.20 + t*0.48], i*3);
+}
+// ---- Invisible containment chamber (never rendered): the logo's own bounding box plus padding ----
+let mnx = 1e9, mxx = -1e9, mny = 1e9, mxy = -1e9, mnz = 1e9, mxz = -1e9;
+for (let i = 0; i < N; i++) {
+  const k = i*3, hx = home[k], hy = home[k+1], hz = home[k+2];
+  if (hx < mnx) mnx = hx; if (hx > mxx) mxx = hx;
+  if (hy < mny) mny = hy; if (hy > mxy) mxy = hy;
+  if (hz < mnz) mnz = hz; if (hz > mxz) mxz = hz;
+}
+const PAD_X = 0.9, PAD_Y = 1.1, PAD_Z = 1.0;   // free room around the logo (world units)
+const EDGE = 0.07;                              // inset for the shader shimmer (0.012) + half the grain sprite (~0.053)
+const CX = (mnx+mxx)/2, CY = (mny+mxy)/2, CZ = (mnz+mxz)/2;
+const HX = (mxx-mnx)/2 + PAD_X - EDGE, HY = (mxy-mny)/2 + PAD_Y - EDGE, HZ = (mxz-mnz)/2 + PAD_Z - EDGE;   // hard limits (half extents)
+const SX = (mxx-mnx)/2 + PAD_X*0.45, SY = (mxy-mny)/2 + PAD_Y*0.45, SZ = (mxz-mnz)/2 + PAD_Z*0.45;       // soft-wall start (always outside the logo)
+const IX = 1/(HX-SX), IY = 1/(HY-SY), IZ = 1/(HZ-SZ);
+const WALL = 0.12, REBOUND = 0.35;
+// Initialize particles directly at home position so letters are instantly crisp
+pos.set(home);
+
+const geo = new THREE.BufferGeometry();
+geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+geo.setAttribute('color', new THREE.BufferAttribute(col, 3));
+const c = document.createElement('canvas'); c.width = c.height = 64;
+const g = c.getContext('2d');
+const gr = g.createRadialGradient(24, 22, 2, 32, 32, 31);
+gr.addColorStop(0, '#ffffff'); gr.addColorStop(0.55, '#c4c4c4'); gr.addColorStop(1, '#6c6c6c');
+g.beginPath(); g.arc(32, 32, 31, 0, 7); g.fillStyle = gr; g.fill();
+const mat = new THREE.PointsMaterial({size:0.085, vertexColors:true, map:new THREE.CanvasTexture(c), alphaTest:0.5, transparent:false});
+const seed = new Float32Array(N); for (let i = 0; i < N; i++) seed[i] = Math.random();
+geo.setAttribute('aSeed', new THREE.BufferAttribute(seed, 1));
+const U = {uTime:{value:0}};
+// GPU-side motion: every grain shimmers, the text ripples, a light sweep rolls across, grains twinkle in size
+mat.onBeforeCompile = sh => {
+  sh.uniforms.uTime = U.uTime;
+  sh.vertexShader = 'uniform float uTime; attribute float aSeed;\n' + sh.vertexShader
+   .replace('#include <begin_vertex>', `#include <begin_vertex>
+     float sp = aSeed*6.2831;
+     transformed += vec3(sin(uTime*1.6+sp), cos(uTime*1.3+sp*1.7), sin(uTime*1.9+sp*2.3))*0.012;
+     `)
+   .replace('#include <color_vertex>', `#include <color_vertex>
+     #ifdef USE_COLOR
+       vColor.rgb += 0.22*pow(max(0., sin(position.x*0.9 + position.y*0.5 - uTime*1.4)), 14.);
+     #endif`)
+   .replace('#include <logdepthbuf_vertex>', `gl_PointSize *= 0.8 + 0.45*sin(uTime*3.0 + aSeed*40.0);
+     #include <logdepthbuf_vertex>`);
+};
+scene.add(new THREE.Points(geo, mat));
+// faint floating dust around the text
+const DN = 5000, dgeo = new THREE.BufferGeometry(), dpos = new Float32Array(DN*3);
+const DEDGE = 0.03, DHX = HX - DEDGE, DHY = HY - DEDGE, DHZ = HZ - DEDGE;   // dust sprites are smaller, no shimmer
+for (let i = 0; i < DN; i++) dpos.set([CX + (Math.random()*2-1)*DHX, CY + (Math.random()*2-1)*DHY, CZ + (Math.random()*2-1)*DHZ], i*3);
+dgeo.setAttribute('position', new THREE.BufferAttribute(dpos, 3));
+scene.add(new THREE.Points(dgeo, new THREE.PointsMaterial({size:0.05, color:0x9aa5b3, map:new THREE.CanvasTexture(c), alphaTest:0.4, transparent:true, opacity:0.5, depthWrite:false})));
+
+// Pointer -> world position on the z=0 plane
+const mouse = new THREE.Vector2(), ray = new THREE.Raycaster(), plane = new THREE.Plane(new THREE.Vector3(0,0,1), 0), hit = new THREE.Vector3();
+let active = false;
+addEventListener('pointermove', e => { mouse.set(e.clientX/innerWidth*2-1, -(e.clientY/innerHeight)*2+1); active = true; });
+addEventListener('pointerdown', e => { mouse.set(e.clientX/innerWidth*2-1, -(e.clientY/innerHeight)*2+1); active = true; });
+addEventListener('pointerup', e => { if (e.pointerType !== 'mouse') active = false; });
+addEventListener('pointercancel', () => active = false);
+document.documentElement.addEventListener('mouseleave', () => active = false);
+
+// Forward wheel events to parent window so page scroll works when hovering over canvas
+addEventListener('wheel', e => {
+  try {
+    if (window.parent && window.parent !== window) {
+      window.parent.dispatchEvent(new WheelEvent('wheel', {
+        deltaX: e.deltaX,
+        deltaY: e.deltaY,
+        deltaZ: e.deltaZ,
+        deltaMode: e.deltaMode,
+        clientX: e.clientX,
+        clientY: e.clientY,
+        screenX: e.screenX,
+        screenY: e.screenY,
+        bubbles: true,
+        cancelable: true
+      }));
+    }
+  } catch (err) {}
+}, { passive: true });
+
+function resize(){
+  renderer.setSize(innerWidth, innerHeight); camera.aspect = innerWidth/innerHeight;
+  const fitW = (TEXT_W*1.2/camera.aspect)/(2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2)));
+  const fitH = (TEXT_W*0.75)/(2*Math.tan(THREE.MathUtils.degToRad(camera.fov/2)));
+  camera.position.z = Math.max(fitW, fitH, 4);
+  camera.updateProjectionMatrix();
+}
+addEventListener('resize', resize); resize();
+
+const RADIUS = 0.7, PUSH = 0.07, SPRING = 0.014, DAMP = 0.91;
+const ph = new THREE.Vector3(), SW = {on:false, x:0, y:0, age:0};
+let wasActive = false, mvx = 0, mvy = 0, spd = 0;
+addEventListener('pointerdown', () => { ray.setFromCamera(mouse, camera); ray.ray.intersectPlane(plane, hit); SW.on = true; SW.x = hit.x; SW.y = hit.y; SW.age = 0; });
+function tick(){
+  U.uTime.value = performance.now()/1000;
+  camera.position.x += (mouse.x*0.9 - camera.position.x)*0.04;
+  camera.position.y += (mouse.y*0.5 - camera.position.y)*0.04;
+  camera.lookAt(0, 0, 0); camera.updateMatrixWorld();
+  if (active) {
+    ray.setFromCamera(mouse, camera); ray.ray.intersectPlane(plane, hit);
+    if (wasActive) { mvx = mvx*0.6 + (hit.x-ph.x)*0.4; mvy = mvy*0.6 + (hit.y-ph.y)*0.4; } else { mvx = mvy = 0; }
+    ph.copy(hit); wasActive = true;
+  } else { wasActive = false; mvx *= 0.8; mvy *= 0.8; }
+  spd = Math.min(Math.hypot(mvx, mvy)*6, 1.5);
+  const R2 = RADIUS*RADIUS;
+  const ring = SW.on ? SW.age*0.14 : 0;
+  if (SW.on && ++SW.age > 60) SW.on = false;
+  for (let i = 0; i < N; i++) {
+    const k = i*3;
+    let vx = vel[k], vy = vel[k+1], vz = vel[k+2];
+    if (active) {
+      const dx = pos[k]-hit.x, dy = pos[k+1]-hit.y, d2 = dx*dx + dy*dy;
+      if (d2 < R2) {
+        const d = Math.sqrt(d2) + 1e-4, f = (1 - d/RADIUS), s = f*f*PUSH*(0.6 + spd);
+        const nx = dx/d, ny = dy/d;
+        vx += nx*s - ny*s*0.9 + mvx*f*0.9 + (Math.random()-0.5)*s;
+        vy += ny*s + nx*s*0.9 + mvy*f*0.9 + (Math.random()-0.5)*s;
+        vz += (Math.random()-0.5)*s*4;
+      }
+    }
+    if (SW.on) {
+      const dx = pos[k]-SW.x, dy = pos[k+1]-SW.y, d = Math.sqrt(dx*dx + dy*dy) + 1e-4, w = d - ring;
+      if (w > -0.35 && w < 0.35) {
+        const s = 0.09*(1 - Math.abs(w)/0.35)*(1 - SW.age/60);
+        vx += dx/d*s; vy += dy/d*s; vz += (Math.random()-0.5)*s*2;
+      }
+    }
+    vx += (home[k]-pos[k])*SPRING; vy += (home[k+1]-pos[k+1])*SPRING; vz += (home[k+2]-pos[k+2])*SPRING;
+    // soft walls: smooth quadratic push back toward the logo once a grain enters the outer margin
+    let qx = pos[k]-CX, qy = pos[k+1]-CY, qz = pos[k+2]-CZ, t;
+    if (qx > SX) { t = (qx-SX)*IX; vx -= t*t*WALL; } else if (qx < -SX) { t = (-SX-qx)*IX; vx += t*t*WALL; }
+    if (qy > SY) { t = (qy-SY)*IY; vy -= t*t*WALL; } else if (qy < -SY) { t = (-SY-qy)*IY; vy += t*t*WALL; }
+    if (qz > SZ) { t = (qz-SZ)*IZ; vz -= t*t*WALL; } else if (qz < -SZ) { t = (-SZ-qz)*IZ; vz += t*t*WALL; }
+    vx *= DAMP; vy *= DAMP; vz *= DAMP;
+    qx += vx; qy += vy; qz += vz;
+    // hard walls: strict guarantee, position can never exceed the limit; velocity is reflected and damped
+    if (qx > HX) { qx = HX; if (vx > 0) vx *= -REBOUND; } else if (qx < -HX) { qx = -HX; if (vx < 0) vx *= -REBOUND; }
+    if (qy > HY) { qy = HY; if (vy > 0) vy *= -REBOUND; } else if (qy < -HY) { qy = -HY; if (vy < 0) vy *= -REBOUND; }
+    if (qz > HZ) { qz = HZ; if (vz > 0) vz *= -REBOUND; } else if (qz < -HZ) { qz = -HZ; if (vz < 0) vz *= -REBOUND; }
+    vel[k] = vx; vel[k+1] = vy; vel[k+2] = vz;
+    pos[k] = qx + CX; pos[k+1] = qy + CY; pos[k+2] = qz + CZ;
+  }
+  for (let i = 0; i < DN; i++) {
+    const k = i*3;
+    let dy = dpos[k+1] - CY + 0.0035 + (i%7)*0.0004, dx = dpos[k] - CX + Math.sin(U.uTime.value*0.6 + i)*0.0015;
+    if (dy > DHY) dy = -DHY;
+    if (dx > DHX) dx = DHX; else if (dx < -DHX) dx = -DHX;
+    dpos[k] = dx + CX; dpos[k+1] = dy + CY;
+  }
+  dgeo.attributes.position.needsUpdate = true;
+  geo.attributes.position.needsUpdate = true;
+  renderer.render(scene, camera);
+  requestAnimationFrame(tick);
+}
+tick();
+})();
+</script>
+</body>
+</html>

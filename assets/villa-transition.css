@@ -1,0 +1,630 @@
+:root {
+  --blank-bg: #F6F5F1;
+}
+
+/* 1. INTRO SECTION */
+.site-intro-section {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  background-color: var(--blank-bg);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--default-padding, 5vw);
+  box-sizing: border-box;
+  z-index: 10;
+  overflow: hidden;
+  contain: paint;
+  gap: clamp(24px, 4vw, 60px);
+}
+
+.site-intro-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  mix-blend-mode: normal;
+  color: #111;
+  flex: 0 1 auto;
+  max-width: 48vw;
+  z-index: 2;
+}
+
+.site-intro-left .intro-name {
+  font-family: var(--font-primary, "PPEditorialNew", serif);
+  font-weight: 300;
+  font-size: clamp(34px, 5.2vw, 86px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: #111;
+}
+
+.site-intro-left .intro-line {
+  align-self: stretch;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.35;
+  margin: clamp(10px, 1.2vw, 16px) 0 clamp(8px, 1vw, 12px);
+  transform-origin: left center;
+  transform: scaleX(0);
+  will-change: transform;
+}
+
+.site-intro-left .intro-role {
+  font-family: var(--font-secondary, "Helvetica Neue", Helvetica, Arial, sans-serif);
+  font-weight: 300;
+  font-size: clamp(13px, 1.2vw, 17px);
+  line-height: 1.4;
+  color: #555;
+  margin: 0;
+}
+
+.site-intro-right {
+  flex: 1 1 auto;
+  height: min(85vh, 650px);
+  min-width: 320px;
+  max-width: 52vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.site-intro-3d-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .site-intro-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: clamp(20px, 5vw, 40px);
+    gap: 16px;
+  }
+  .site-intro-left {
+    max-width: 100%;
+    flex: 0 0 auto;
+  }
+  .site-intro-right {
+    width: 100%;
+    max-width: 100%;
+    height: 48vh;
+    min-width: 0;
+    min-height: 240px;
+  }
+}
+
+/* 2. BLANK HOLD SECTION */
+.site-blank-section {
+  width: 100%;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  background-color: var(--blank-bg);
+  pointer-events: none;
+}
+
+/* 3. PINNED TRANSITION CONTAINER */
+.villa-transition-container {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  background-color: var(--blank-bg);
+  overflow: hidden;
+  z-index: 10;
+  contain: paint;
+}
+
+.villa-reveal-window {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  clip-path: inset(38% 32% 38% 32% round 6px);
+  will-change: clip-path;
+  background-color: var(--blank-bg);
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  contain: paint;
+}
+
+.villa-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+  will-change: transform, opacity;
+  pointer-events: none;
+  user-select: none;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.villa-img--day {
+  z-index: 1;
+  transform: scale(1.45) translateZ(0);
+}
+
+.villa-img--night {
+  z-index: 2;
+  opacity: 0;
+  transform: scale(1.0) translateZ(0);
+}
+
+.villa-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  will-change: opacity;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0) 40%, rgba(5, 7, 12, 0.85) 100%);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* 4. SCROLL PROMPT */
+.villa-scroll-prompt {
+  position: absolute;
+  bottom: clamp(24px, 4vh, 40px);
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+  will-change: opacity;
+  backface-visibility: hidden;
+}
+
+.villa-scroll-prompt-text {
+  display: inline-block;
+  font-family: var(--font-secondary, "Helvetica Neue", Helvetica, Arial, sans-serif);
+  font-size: clamp(10px, 0.75vw, 12px);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55), 0 0 3px rgba(0, 0, 0, 0.75);
+  white-space: nowrap;
+  animation: villaBreathe 2.4s ease-in-out infinite;
+}
+
+@keyframes villaBreathe {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .villa-reveal-window {
+    clip-path: inset(0% 0% 0% 0% round 0px) !important;
+  }
+  .villa-img--day {
+    transform: scale(1.0) translateZ(0) !important;
+  }
+  .villa-scroll-prompt-text {
+    animation: none !important;
+  }
+}
+
+/* Typography: Enforce non-italic upright styles across all text on the page */
+.home-page,
+.home-page *,
+.slider-overlay,
+.slider-overlay *,
+.home-page__filters-label,
+.home-page__filter.home-page__filters-trigger,
+.slider-overlay__counter,
+.slider-overlay__digit,
+.slider-overlay__digit span,
+.slider-overlay__counter-sep {
+  font-style: normal !important;
+}
+
+/* Ensure Grid display mode toggle and grid overlay are completely removed and occupy zero space */
+.home-page__mode-toggle,
+.grid-overlay {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* ==========================================================================
+   Project Page Redesign Styles - Precision matching Screenshot B & Requirements
+   ========================================================================== */
+
+.project-page--redesigned {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--blank-bg, #f7f5f2);
+  color: #111;
+  padding: clamp(24px, 4vh, 48px) var(--default-padding, 4vw) clamp(60px, 8vh, 100px);
+  box-sizing: border-box;
+  font-family: var(--font-sans, "Helvetica Neue", Arial, sans-serif);
+  font-style: normal !important;
+}
+
+.project-page--redesigned * {
+  font-style: normal !important;
+}
+
+/* 1. Header with Back Button and Large Upright Project Title */
+.project-header--redesigned {
+  position: relative;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto clamp(24px, 3vh, 36px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-nav-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  z-index: 20;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #1C1C1A;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.nav-link:hover {
+  opacity: 0.55;
+  transform: translateX(-3px);
+}
+
+.project-header--redesigned .nav-link {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 20;
+}
+
+.project-header--redesigned .nav-link:hover {
+  opacity: 0.55;
+  transform: translateY(-50%) translateX(-3px);
+}
+
+.back-arrow {
+  display: inline-block;
+  line-height: 1;
+}
+
+.project-title--redesigned {
+  font-family: "PP Editorial New", Georgia, serif !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  font-size: clamp(34px, 5.2vw, 68px);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  text-align: center;
+  color: #111;
+  margin: 0;
+  padding-top: clamp(8px, 1.5vh, 16px);
+  max-width: 900px;
+}
+
+/* 2. Full-Size Hero Image Directly Below Title (Natural aspect ratio, no cropping) */
+.project-hero-container--redesigned {
+  position: relative;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+.project-hero-img--redesigned {
+  width: 100%;
+  height: auto;
+  max-height: 82vh;
+  object-fit: contain;
+  display: block;
+  border-radius: 2px;
+  cursor: default !important;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* 3. Category • Location Subline Directly Below Hero Image */
+.project-subline--redesigned {
+  width: 100%;
+  max-width: 1180px;
+  margin: clamp(16px, 2.2vh, 24px) auto clamp(36px, 5vh, 56px);
+  text-align: center;
+  font-family: var(--font-sans, "Helvetica Neue", Arial, sans-serif);
+  font-size: clamp(14px, 1.15vw, 17px);
+  font-weight: 400;
+  font-style: normal !important;
+  letter-spacing: 0.06em;
+  color: #666;
+}
+
+/* 4. Minimal Project Details with Scroll Fade-Up */
+.project-details--redesigned {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto clamp(48px, 7vh, 80px);
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.project-details--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-details__desc {
+  font-size: clamp(16px, 1.25vw, 20px);
+  line-height: 1.65;
+  color: #2b2b2b;
+  margin-bottom: clamp(28px, 4vh, 40px);
+  font-family: var(--font-sans, "Helvetica Neue", Arial, sans-serif);
+  font-style: normal !important;
+}
+
+.project-details__desc p {
+  margin: 0;
+  font-style: normal !important;
+}
+
+.project-details__meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: clamp(16px, 2.5vw, 32px);
+  padding-top: clamp(20px, 3vh, 32px);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.project-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.project-meta-item--full {
+  grid-column: 1 / -1;
+}
+
+.project-meta-item__label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: #888;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-style: normal !important;
+}
+
+.project-meta-item__val {
+  font-size: 15px;
+  color: #111;
+  font-weight: 400;
+  font-style: normal !important;
+}
+
+.project-meta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.project-meta-tag {
+  font-size: 12px;
+  padding: 4px 10px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 100px;
+  color: #444;
+  letter-spacing: 0.02em;
+  font-style: normal !important;
+}
+
+/* 5. Autoplaying 4-Photo Carousel for Other Images */
+.project-carousel-section {
+  position: relative;
+  width: 100%;
+  max-width: 1180px;
+  margin: clamp(40px, 6vh, 72px) auto 0;
+  user-select: none;
+}
+
+.project-carousel-viewport {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.project-carousel-track {
+  display: flex;
+  width: 100%;
+  will-change: transform;
+}
+
+.project-carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-carousel-slide__img-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-carousel-slide__img {
+  width: 100%;
+  height: auto;
+  max-height: 75vh;
+  object-fit: contain;
+  display: block;
+  border-radius: 2px;
+  cursor: default !important;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.project-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: clamp(16px, 2.5vh, 28px);
+}
+
+.project-carousel-arrow {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #111;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.project-carousel-arrow:hover {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.project-carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.project-carousel-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.22);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.project-carousel-dot--active {
+  background: #111;
+  transform: scale(1.35);
+}
+
+@media (max-width: 768px) {
+  .project-page--redesigned {
+    padding: 20px 16px 60px;
+  }
+  .project-title--redesigned {
+    font-size: 30px;
+  }
+  .project-header--redesigned {
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .project-header--redesigned .nav-link {
+    position: static;
+    transform: none;
+  }
+  .project-header--redesigned .nav-link:hover {
+    transform: translateX(-3px);
+  }
+  .project-hero-img--redesigned {
+    max-height: 60vh;
+  }
+  .project-details__meta-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .project-carousel-slide__img {
+    max-height: 55vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-details--redesigned {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .project-carousel-track {
+    transition: none !important;
+  }
+}
+
+
+/* Ensure transition elements are completely hidden on project pages */
+.project-page ~ .villa-transition-container,
+.project-page ~ .site-intro-section,
+.project-page ~ .pin-spacer,
+body:has(.project-page) .villa-transition-container,
+body:has(.project-page) .site-intro-section,
+body:has(.project-page) .pin-spacer {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}

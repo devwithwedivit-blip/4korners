@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#f7f5f2" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
+        <!-- Static shell only. The build's prerender pass writes the real
+             per-route tags into dist/<route>/index.html, each carrying
+             data-rh so react-helmet-async adopts rather than duplicates
+             them. Nothing page-specific belongs here: a static description
+             would survive alongside the per-page one and ship two to
+             crawlers. -->
+        <!-- Data (apicdn) and images (cdn) both come from Sanity. Warm the
+             connections while the JS bundle is still downloading. -->
+        <link rel="preconnect" href="https://b2mcdo5v.apicdn.sanity.io" crossorigin />
+        <link rel="preconnect" href="https://cdn.sanity.io" crossorigin />
+        <!-- The intro name/role reveal renders in Regular + the counter in
+             Ultralight on the very first paint, so preload both. -->
+        <link rel="preload" href="/fonts/PPEditorialNew-Regular.woff2" as="font" type="font/woff2" crossorigin />
+        <link rel="preload" href="/fonts/PPEditorialNew-Ultralight.woff2" as="font" type="font/woff2" crossorigin />
+      <script type="module" crossorigin src="/assets/index-D88q76o1.js"></script>
+      <link rel="modulepreload" crossorigin href="/assets/vendor-react-BfwrijtY.js">
+      <link rel="modulepreload" crossorigin href="/assets/vendor-gsap-B0CNlIB4.js">
+      <link rel="modulepreload" crossorigin href="/assets/vendor-ogl-B2_s5gfZ.js">
+      
+        <title data-rh="true">Mathilde De Chiara, designer and interior architect</title>
+    <meta data-rh="true" name="description" content="Portfolio of Mathilde De Chiara: interior architecture, scenography and object design, from the Basque Country to Paris. Projects, exhibitions, furniture."/>
+    <link data-rh="true" rel="canonical" href="https://www.mathildedechiara.com/en"/>
+    <meta data-rh="true" property="og:title" content="Mathilde De Chiara, designer and interior architect"/>
+    <meta data-rh="true" property="og:description" content="Portfolio of Mathilde De Chiara: interior architecture, scenography and object design, from the Basque Country to Paris. Projects, exhibitions, furniture."/>
+    <meta data-rh="true" property="og:url" content="https://www.mathildedechiara.com/en"/>
+    <meta data-rh="true" property="og:type" content="website"/>
+    <meta data-rh="true" property="og:locale" content="en_US"/>
+    <meta data-rh="true" property="og:locale:alternate" content="fr_FR"/>
+    <meta data-rh="true" property="og:site_name" content="Mathilde De Chiara"/>
+    <meta data-rh="true" property="og:image" content="https://cdn.sanity.io/images/b2mcdo5v/production/53134dff95700ec9947bff56a9801cca4ad3bb1e-1200x630.png?w=1200&amp;h=630&amp;fit=crop&amp;crop=entropy&amp;fm=jpg&amp;q=80"/>
+    <meta data-rh="true" property="og:image:width" content="1200"/>
+    <meta data-rh="true" property="og:image:height" content="630"/>
+    <meta data-rh="true" property="og:image:alt" content="Mathilde De Chiara, designer and interior architect"/>
+    <meta data-rh="true" name="twitter:card" content="summary_large_image"/>
+    <meta data-rh="true" name="twitter:title" content="Mathilde De Chiara, designer and interior architect"/>
+    <meta data-rh="true" name="twitter:description" content="Portfolio of Mathilde De Chiara: interior architecture, scenography and object design, from the Basque Country to Paris. Projects, exhibitions, furniture."/>
+    <meta data-rh="true" name="twitter:image" content="https://cdn.sanity.io/images/b2mcdo5v/production/53134dff95700ec9947bff56a9801cca4ad3bb1e-1200x630.png?w=1200&amp;h=630&amp;fit=crop&amp;crop=entropy&amp;fm=jpg&amp;q=80"/>
+    <meta data-rh="true" name="twitter:image:alt" content="Mathilde De Chiara, designer and interior architect"/>
+    <link data-rh="true" rel="alternate" hreflang="fr" href="https://www.mathildedechiara.com/fr"/>
+    <link data-rh="true" rel="alternate" hreflang="en" href="https://www.mathildedechiara.com/en"/>
+    <link data-rh="true" rel="alternate" hreflang="x-default" href="https://www.mathildedechiara.com/en"/>
+    <script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.mathildedechiara.com/#website","name":"Mathilde De Chiara","url":"https://www.mathildedechiara.com","inLanguage":"en","publisher":{"@id":"https://www.mathildedechiara.com/#person"}},{"@type":"Person","@id":"https://www.mathildedechiara.com/#person","name":"Mathilde De Chiara","url":"https://www.mathildedechiara.com","jobTitle":"Designer & Interior architect","email":"mathilde.dechiara@gmail.com","image":"https://cdn.sanity.io/images/b2mcdo5v/production/a94d333704d6bfc6a854eaebdb5a3455fc74acf1-1254x1254.png?w=1200&h=630&fit=crop&crop=entropy&fm=jpg&q=80","sameAs":["https://www.instagram.com/mathilde.dechiara/","https://www.linkedin.com/in/mathilde-de-chiara-1659a4168/"]}]}</script>
+    </head>
+    <body>
+        <div id="root"></div>
+    </body>
+</html>

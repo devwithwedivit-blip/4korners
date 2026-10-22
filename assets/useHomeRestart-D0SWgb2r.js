@@ -1,0 +1,1 @@
+import{r}from"./vendor-react-BfwrijtY.js";import{M as s,a as o,N as n,G as c}from"./index-D88q76o1.js";function p(){const{resetState:t}=s(),{navigateTo:e,currentLang:a}=o();return{restart:r.useCallback(()=>{try{sessionStorage.setItem("introSeen","1");sessionStorage.setItem("introTextSeen","1")}catch{}t(),n(),e("home")},[t,e]),homeHref:c(a,"home"),currentLang:a}}export{p as u};

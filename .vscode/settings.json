@@ -1,0 +1,6 @@
+﻿{
+  "files.watcherExclude": { "**/cdn.sanity.io/**": true, "**/assets/**": true, "**/.cache/**": true },
+  "search.exclude": { "**/cdn.sanity.io": true, "**/assets": true, "**/*.png": true, "**/*.jpg": true, "**/interactive_3d_particle_portrait.html": true },
+  "files.exclude": { "**/.cache": true },
+  "editor.largeFileOptimizations": true
+}

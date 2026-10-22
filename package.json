@@ -1,0 +1,17 @@
+{
+  "name": "mathilde-de-chiara-clone",
+  "version": "1.0.0",
+  "description": "Local clone of Mathilde De Chiara portfolio deployed on localhost:4444",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "portfolio",
+    "architecture",
+    "mathilde-de-chiara",
+    "clone"
+  ],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- The stroke was #fff on a transparent ground, which made the mark
+       invisible in a light browser tab and in search results. Same mark,
+       now painted against whichever ground it lands on. The light value
+       tracks the body colour in src/styles/base/_global.scss. -->
+  <style>
+    rect { fill: none; stroke: #333333; stroke-width: 2.5; }
+    @media (prefers-color-scheme: dark) { rect { stroke: #ffffff; } }
+  </style>
+  <rect x="4.5" y="4.5" width="23" height="23"/>
+</svg>

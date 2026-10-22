@@ -1,0 +1,9 @@
+﻿cdn.sanity.io/
+assets/
+.cache/
+interactive_3d_particle_portrait.html
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.svg

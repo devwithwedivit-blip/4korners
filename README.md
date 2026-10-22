@@ -1,40 +1,32 @@
-# Mathilde De Chiara — Cloned Portfolio
+# 4 Korners Design Studio Portfolio
 
-This is a local clone of the [Mathilde De Chiara portfolio](https://www.mathildedechiara.com/en), configured and deployed to run locally on **`localhost:4444`**.
+Portfolio website for 4 Korners Design Studio, configured to run locally on **`localhost:4444`** and deploy statically to Vercel with zero external dependencies.
 
 ---
 
 ## 🚀 Quick Start
 
-The local server is already running in the background.
-
-Open your browser and navigate to:
-👉 **[http://localhost:4444/en](http://localhost:4444/en)**
-
-To restart or run the server anytime:
+To run the local server:
 ```bash
 npm start
 # or
 node server.js
 ```
 
+Open your browser and navigate to:
+👉 **[http://localhost:4444/en](http://localhost:4444/en)**
+
 ---
 
-## 🛠️ Architecture & What Was Done
+## 🛠️ Architecture
 
 1. **Asset Structure & SPA Routing**:
-   - `www.mathildedechiara.com/`: Contains `en.html`, `index.html`, `assets/`, `fonts/`, `site.webmanifest`, and icons.
-   - All client-side routes (`/en`, `/`, `/fr`, `/en/about`, `/en/project/:slug`) are seamlessly handled via SPA fallback.
+   - `www.mathildedechiara.com/`: Static directory containing `index.html`, `en.html`, `assets/`, `fonts/`, `site.webmanifest`, and icons.
+   - All client-side routes (`/en`, `/`, `/fr`, `/en/about`, `/en/project/:slug`) are handled via SPA rewrites.
 
-2. **Full Font & Icon Suite**:
-   - All weights of `PP Editorial New` (`Regular`, `Ultralight`, `Italic`, `UltralightItalic`, `Ultrabold`, `UltraboldItalic`) are downloaded into `fonts/`.
-   - SVG and PNG favicons, touch icons, and webmanifest are properly linked.
+2. **Self-Contained Content**:
+   - All projects, images, and content are bundled locally in `data_4korners.js` and `assets/4korners/`.
+   - Zero dependencies on external third-party domains.
 
-3. **Sanity API & CDN Proxy (`/sanity-api/` and `/cdn.sanity.io/`)**:
-   - The production site queries Sanity CMS (`b2mcdo5v.apicdn.sanity.io`) and image CDN (`cdn.sanity.io`), which restrict cross-origin requests to `https://www.mathildedechiara.com`.
-   - `server.js` provides an integrated proxy with proper origin attribution and local caching (`.cache/`).
-   - Project hero images and assets in `cdn.sanity.io/images/b2mcdo5v/production/` are pre-cached locally for offline resilience and instant load times.
-   - WebGL textures (OGL canvas) sample without any CORS errors.
-
-4. **Zero Dependencies**:
+3. **Zero Dependencies**:
    - Built purely with standard Node.js libraries (`http`, `fs`, `path`). No extra `npm install` needed.

@@ -8,6 +8,7 @@ const fs = require('fs');
 const path = require('path');
 
 const PORT = process.env.PORT || 4444;
+const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
 const BASE_DIR = __dirname;
 const SITE_DIR = path.join(BASE_DIR, 'www.mathildedechiara.com');
 const ASSETS_4KORNERS_DIR = path.join(BASE_DIR, 'assets', '4korners');
@@ -51,10 +52,11 @@ function resolveGroqQuery(queryStr, searchParams, host) {
     if (query.includes('%')) query = decodeURIComponent(query);
   } catch (e) {}
 
-  // Formatter to prepend current host for absolute URLs
+  // Formatter to prepend current base URL for assets
   function formatData(obj) {
     const jsonStr = JSON.stringify(obj);
-    const replaced = jsonStr.replaceAll('"/assets/4korners/', `"http://${host}/assets/4korners/`);
+    const baseUrl = process.env.BASE_URL || `http://${host}`;
+    const replaced = jsonStr.replaceAll('"/assets/4korners/', `"${baseUrl}/assets/4korners/`);
     return JSON.parse(replaced);
   }
 
@@ -166,28 +168,13 @@ const server = http.createServer(async (req, res) => {
       return;
     }
 
-    // Fallback proxy to upstream Sanity if query not recognized
-    const remotePath = pathname.replace(/^\/sanity-api/, '');
-    const queryString = reqUrl.search || '';
-    const remoteUrl = `https://b2mcdo5v.apicdn.sanity.io${remotePath}${queryString}`;
-
-    try {
-      const upstreamRes = await fetch(remoteUrl, {
-        headers: {
-          'Origin': 'https://www.mathildedechiara.com',
-          'Referer': 'https://www.mathildedechiara.com/',
-          'User-Agent': req.headers['user-agent'] || 'Mozilla/5.0'
-        }
-      });
-      const bodyText = await upstreamRes.text();
-      res.writeHead(upstreamRes.status, { 'Content-Type': 'application/json; charset=utf-8' });
-      res.end(bodyText);
-      return;
-    } catch (err) {
-      res.writeHead(502, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ error: err.message }));
-      return;
-    }
+    // No external proxy - return empty result for unrecognized queries
+    res.writeHead(200, {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Cache-Control': 'no-store, no-cache, must-revalidate'
+    });
+    res.end(JSON.stringify({ result: null }));
+    return;
   }
 
   // 2. 4 Korners Local Assets (/assets/4korners/*)
@@ -256,48 +243,9 @@ const server = http.createServer(async (req, res) => {
       return;
     }
 
-    const remoteUrl = `https://cdn.sanity.io/${relPath}${reqUrl.search || ''}`;
-    try {
-      const upstreamRes = await fetch(remoteUrl, {
-        headers: {
-          'Origin': 'https://www.mathildedechiara.com',
-          'Referer': 'https://www.mathildedechiara.com/',
-          'User-Agent': req.headers['user-agent'] || 'Mozilla/5.0'
-        }
-      });
-
-      if (!upstreamRes.ok) {
-        res.writeHead(upstreamRes.status);
-        res.end();
-        return;
-      }
-
-      const contentType = upstreamRes.headers.get('content-type') || getMime(localFile);
-      const buffer = Buffer.from(await upstreamRes.arrayBuffer());
-
-      if (!reqUrl.search && !fs.existsSync(localFile)) {
-        try {
-          fs.mkdirSync(path.dirname(localFile), { recursive: true });
-          fs.writeFileSync(localFile, buffer);
-        } catch (e) {}
-      }
-
-      res.writeHead(200, {
-        'Content-Type': contentType,
-        'Cache-Control': 'public, max-age=86400'
-      });
-      res.end(buffer);
-      return;
-    } catch (err) {
-      if (fs.existsSync(localFile)) {
-        res.writeHead(200, { 'Content-Type': getMime(localFile) });
-        fs.createReadStream(localFile).pipe(res);
-        return;
-      }
-      res.writeHead(404);
-      res.end('Image not found');
-      return;
-    }
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end('Image not found');
+    return;
   }
 
   // 4. Static files in www.mathildedechiara.com or BASE_DIR

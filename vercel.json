@@ -3,10 +3,6 @@
   "outputDirectory": "www.mathildedechiara.com",
   "rewrites": [
     {
-      "source": "/sanity-api/:path*",
-      "destination": "https://b2mcdo5v.apicdn.sanity.io/:path*"
-    },
-    {
       "source": "/4-korners-logo.html",
       "destination": "/4%20KORNERS%20DESIGN%20STUDIO%20WITHOUT%20BACKGROUND.html"
     },

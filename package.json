@@ -1,7 +1,7 @@
 {
-  "name": "mathilde-de-chiara-clone",
+  "name": "four-korners-design-studio",
   "version": "1.0.0",
-  "description": "Local clone of Mathilde De Chiara portfolio deployed on localhost:4444",
+  "description": "Portfolio website for 4 Korners Design Studio",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -9,8 +9,7 @@
   "keywords": [
     "portfolio",
     "architecture",
-    "mathilde-de-chiara",
-    "clone"
+    "4-korners-design-studio"
   ],
   "author": "",
   "license": "ISC"

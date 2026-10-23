@@ -1,14 +1,46 @@
 {
-  "buildCommand": "",
+  "buildCommand": "node scripts/vercel-build.js",
   "outputDirectory": "www.mathildedechiara.com",
   "rewrites": [
+    {
+      "source": "/sanity-api/:path*",
+      "destination": "/api/sanity-api/:path*"
+    },
     {
       "source": "/4-korners-logo.html",
       "destination": "/4%20KORNERS%20DESIGN%20STUDIO%20WITHOUT%20BACKGROUND.html"
     },
     {
-      "source": "/((?!.*\\.[\\w]+$).*)",
+      "source": "/((?!assets/|fonts/|cdn\\.sanity\\.io/|favicon|apple-touch|icon-|site\\.webmanifest|4%20KORNERS)(?!.*\\.[\\w]+$).*)",
       "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/4korners/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    },
+    {
+      "source": "/cdn.sanity.io/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    },
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
     }
   ]
 }

@@ -35,7 +35,8 @@ const MIME_TYPES = {
   '.png': 'image/png',
   '.jpg': 'image/jpeg',
   '.jpeg': 'image/jpeg',
-  '.webp': 'image/webp', ".avif": "image/avif",
+  '.webp': 'image/webp',
+  '.avif': 'image/avif', 
   '.gif': 'image/gif',
   '.ico': 'image/x-icon',
   '.pdf': 'application/pdf'

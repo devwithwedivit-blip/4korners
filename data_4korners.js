@@ -70,7 +70,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-abhay-banquet-hero",
-        "url": "/assets/4korners/uploads/featured_projects/82eec7d5f39c94b0a45b8395.webp",
+        "url": "/assets/4korners/uploads/featured_projects/82eec7d5f39c94b0a45b8395.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -151,7 +151,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-abhay-banquet-0",
-            "url": "/assets/4korners/uploads/featured_projects/82eec7d5f39c94b0a45b8395.webp",
+            "url": "/assets/4korners/uploads/featured_projects/82eec7d5f39c94b0a45b8395.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -176,7 +176,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-abhay-banquet-1",
-            "url": "/assets/4korners/uploads/featured_projects/26c3738b59113afb6842ee55.webp",
+            "url": "/assets/4korners/uploads/featured_projects/26c3738b59113afb6842ee55.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -201,7 +201,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-abhay-banquet-2",
-            "url": "/assets/4korners/uploads/featured_projects/9942e2c7a5716f5cfbf199f6.webp",
+            "url": "/assets/4korners/uploads/featured_projects/9942e2c7a5716f5cfbf199f6.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -248,7 +248,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-agarwal-jewellers-by-mr-pallav-agarwal-hero",
-        "url": "/assets/4korners/uploads/featured_projects/45fd4aba7d3f01d856ccb0dd.webp",
+        "url": "/assets/4korners/uploads/featured_projects/45fd4aba7d3f01d856ccb0dd.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -329,7 +329,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-agarwal-jewellers-by-mr-pallav-agarwal-0",
-            "url": "/assets/4korners/uploads/featured_projects/45fd4aba7d3f01d856ccb0dd.webp",
+            "url": "/assets/4korners/uploads/featured_projects/45fd4aba7d3f01d856ccb0dd.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -354,7 +354,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-agarwal-jewellers-by-mr-pallav-agarwal-1",
-            "url": "/assets/4korners/uploads/featured_projects/692edddcad18684d038f8046.webp",
+            "url": "/assets/4korners/uploads/featured_projects/692edddcad18684d038f8046.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -379,7 +379,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-agarwal-jewellers-by-mr-pallav-agarwal-2",
-            "url": "/assets/4korners/uploads/featured_projects/73baed95701f5f9dd464581f.webp",
+            "url": "/assets/4korners/uploads/featured_projects/73baed95701f5f9dd464581f.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -404,7 +404,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-agarwal-jewellers-by-mr-pallav-agarwal-3",
-            "url": "/assets/4korners/uploads/featured_projects/fbc6dc0d398ab9e4613976c6.webp",
+            "url": "/assets/4korners/uploads/featured_projects/fbc6dc0d398ab9e4613976c6.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -451,7 +451,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-amish-sagar-residential-interior-hero",
-        "url": "/assets/4korners/uploads/featured_projects/0e42885f15af13c95978450f.webp",
+        "url": "/assets/4korners/uploads/featured_projects/0e42885f15af13c95978450f.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -532,7 +532,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-amish-sagar-residential-interior-0",
-            "url": "/assets/4korners/uploads/featured_projects/0e42885f15af13c95978450f.webp",
+            "url": "/assets/4korners/uploads/featured_projects/0e42885f15af13c95978450f.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -557,7 +557,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-amish-sagar-residential-interior-1",
-            "url": "/assets/4korners/uploads/featured_projects/9f502598e9a3dd4c710054f7.webp",
+            "url": "/assets/4korners/uploads/featured_projects/9f502598e9a3dd4c710054f7.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -582,7 +582,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-amish-sagar-residential-interior-2",
-            "url": "/assets/4korners/uploads/featured_projects/2114167cdb889644ce88ff8d.webp",
+            "url": "/assets/4korners/uploads/featured_projects/2114167cdb889644ce88ff8d.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -607,7 +607,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-amish-sagar-residential-interior-3",
-            "url": "/assets/4korners/uploads/featured_projects/2201ae5b70c12e204970d640.webp",
+            "url": "/assets/4korners/uploads/featured_projects/2201ae5b70c12e204970d640.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -632,7 +632,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-amish-sagar-residential-interior-4",
-            "url": "/assets/4korners/uploads/featured_projects/c4ce3edabb6f4b01de307cd3.webp",
+            "url": "/assets/4korners/uploads/featured_projects/c4ce3edabb6f4b01de307cd3.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -679,7 +679,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-anoop-ji-jewellers-hero",
-        "url": "/assets/4korners/uploads/featured_projects/1d56fe34be2a5a1718f09012.webp",
+        "url": "/assets/4korners/uploads/featured_projects/1d56fe34be2a5a1718f09012.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -760,7 +760,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-anoop-ji-jewellers-0",
-            "url": "/assets/4korners/uploads/featured_projects/1d56fe34be2a5a1718f09012.webp",
+            "url": "/assets/4korners/uploads/featured_projects/1d56fe34be2a5a1718f09012.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -785,7 +785,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-anoop-ji-jewellers-1",
-            "url": "/assets/4korners/uploads/featured_projects/d45957ff54225b821ecf1bf3.webp",
+            "url": "/assets/4korners/uploads/featured_projects/d45957ff54225b821ecf1bf3.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -810,7 +810,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-anoop-ji-jewellers-2",
-            "url": "/assets/4korners/uploads/featured_projects/eb3b90c1efd42caae1230cfd.webp",
+            "url": "/assets/4korners/uploads/featured_projects/eb3b90c1efd42caae1230cfd.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -835,7 +835,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-anoop-ji-jewellers-3",
-            "url": "/assets/4korners/uploads/featured_projects/6d7e7b292ab584af1b50e7a6.webp",
+            "url": "/assets/4korners/uploads/featured_projects/6d7e7b292ab584af1b50e7a6.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -860,7 +860,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-anoop-ji-jewellers-4",
-            "url": "/assets/4korners/uploads/featured_projects/bb995e456cb6029880540927.webp",
+            "url": "/assets/4korners/uploads/featured_projects/bb995e456cb6029880540927.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -907,7 +907,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-anuj-ji-apos-s-luxury-residential-hero",
-        "url": "/assets/4korners/uploads/featured_projects/c8db02f38b217dd99b70cc0c.webp",
+        "url": "/assets/4korners/uploads/featured_projects/c8db02f38b217dd99b70cc0c.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -988,7 +988,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-anuj-ji-apos-s-luxury-residential-0",
-            "url": "/assets/4korners/uploads/featured_projects/c8db02f38b217dd99b70cc0c.webp",
+            "url": "/assets/4korners/uploads/featured_projects/c8db02f38b217dd99b70cc0c.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -1013,7 +1013,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-anuj-ji-apos-s-luxury-residential-1",
-            "url": "/assets/4korners/uploads/featured_projects/001c57315dde8af0ef5fef4e.webp",
+            "url": "/assets/4korners/uploads/featured_projects/001c57315dde8af0ef5fef4e.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -1038,7 +1038,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-anuj-ji-apos-s-luxury-residential-2",
-            "url": "/assets/4korners/uploads/featured_projects/7deab84b04db8852a47d0e00.webp",
+            "url": "/assets/4korners/uploads/featured_projects/7deab84b04db8852a47d0e00.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -1063,7 +1063,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-anuj-ji-apos-s-luxury-residential-3",
-            "url": "/assets/4korners/uploads/featured_projects/7ba4393346d5da5abc9ed775.webp",
+            "url": "/assets/4korners/uploads/featured_projects/7ba4393346d5da5abc9ed775.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -1088,7 +1088,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-anuj-ji-apos-s-luxury-residential-4",
-            "url": "/assets/4korners/uploads/featured_projects/8a53d38e313be49e850e3261.webp",
+            "url": "/assets/4korners/uploads/featured_projects/8a53d38e313be49e850e3261.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -1135,7 +1135,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-anuj-ji-apos-s-office-hero",
-        "url": "/assets/4korners/uploads/featured_projects/ec63f566406e64bdf9a7f248.webp",
+        "url": "/assets/4korners/uploads/featured_projects/ec63f566406e64bdf9a7f248.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -1216,7 +1216,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-anuj-ji-apos-s-office-0",
-            "url": "/assets/4korners/uploads/featured_projects/ec63f566406e64bdf9a7f248.webp",
+            "url": "/assets/4korners/uploads/featured_projects/ec63f566406e64bdf9a7f248.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -1241,7 +1241,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-anuj-ji-apos-s-office-1",
-            "url": "/assets/4korners/uploads/featured_projects/ad170cd4bc991352148c9a13.webp",
+            "url": "/assets/4korners/uploads/featured_projects/ad170cd4bc991352148c9a13.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -1288,7 +1288,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-ashish-khanduja-apos-s-luxury-residential-hero",
-        "url": "/assets/4korners/uploads/featured_projects/199e2ccfbb10e97933a9a354.webp",
+        "url": "/assets/4korners/uploads/featured_projects/199e2ccfbb10e97933a9a354.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -1369,7 +1369,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-ashish-khanduja-apos-s-luxury-residential-0",
-            "url": "/assets/4korners/uploads/featured_projects/199e2ccfbb10e97933a9a354.webp",
+            "url": "/assets/4korners/uploads/featured_projects/199e2ccfbb10e97933a9a354.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -1394,7 +1394,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-ashish-khanduja-apos-s-luxury-residential-1",
-            "url": "/assets/4korners/uploads/featured_projects/a772e4c7aa211b804dd682cc.webp",
+            "url": "/assets/4korners/uploads/featured_projects/a772e4c7aa211b804dd682cc.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -1419,7 +1419,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-ashish-khanduja-apos-s-luxury-residential-2",
-            "url": "/assets/4korners/uploads/featured_projects/21b6b7a26dda3208e26e38f6.webp",
+            "url": "/assets/4korners/uploads/featured_projects/21b6b7a26dda3208e26e38f6.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -1444,7 +1444,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-ashish-khanduja-apos-s-luxury-residential-3",
-            "url": "/assets/4korners/uploads/featured_projects/dc74733314b9a812fd0a42b9.webp",
+            "url": "/assets/4korners/uploads/featured_projects/dc74733314b9a812fd0a42b9.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -1491,7 +1491,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-banquet-hall-hero",
-        "url": "/assets/4korners/uploads/featured_projects/e5cc34db91c7528f2fa8fbe6.webp",
+        "url": "/assets/4korners/uploads/featured_projects/e5cc34db91c7528f2fa8fbe6.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -1572,7 +1572,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-banquet-hall-0",
-            "url": "/assets/4korners/uploads/featured_projects/e5cc34db91c7528f2fa8fbe6.webp",
+            "url": "/assets/4korners/uploads/featured_projects/e5cc34db91c7528f2fa8fbe6.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -1619,7 +1619,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-bhola-nath-siyaram-jewellers-by-mr-mayur-gupta-hero",
-        "url": "/assets/4korners/uploads/featured_projects/d5e7046c4f5b8ae3b2e90ee2.webp",
+        "url": "/assets/4korners/uploads/featured_projects/d5e7046c4f5b8ae3b2e90ee2.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -1700,7 +1700,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-bhola-nath-siyaram-jewellers-by-mr-mayur-gupta-0",
-            "url": "/assets/4korners/uploads/featured_projects/d5e7046c4f5b8ae3b2e90ee2.webp",
+            "url": "/assets/4korners/uploads/featured_projects/d5e7046c4f5b8ae3b2e90ee2.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -1725,7 +1725,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-bhola-nath-siyaram-jewellers-by-mr-mayur-gupta-1",
-            "url": "/assets/4korners/uploads/featured_projects/55434a46c300716fa939131c.webp",
+            "url": "/assets/4korners/uploads/featured_projects/55434a46c300716fa939131c.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -1750,7 +1750,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-bhola-nath-siyaram-jewellers-by-mr-mayur-gupta-2",
-            "url": "/assets/4korners/uploads/featured_projects/6f1c320509da788aa84bd46f.webp",
+            "url": "/assets/4korners/uploads/featured_projects/6f1c320509da788aa84bd46f.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -1775,7 +1775,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-bhola-nath-siyaram-jewellers-by-mr-mayur-gupta-3",
-            "url": "/assets/4korners/uploads/featured_projects/eab876541dc95cd48ac99c48.webp",
+            "url": "/assets/4korners/uploads/featured_projects/eab876541dc95cd48ac99c48.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -1822,7 +1822,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-commercial-building-by-mr-vikas-hero",
-        "url": "/assets/4korners/uploads/featured_projects/e652e3bd4e6b5f0b228a4932.webp",
+        "url": "/assets/4korners/uploads/featured_projects/e652e3bd4e6b5f0b228a4932.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -1903,7 +1903,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-commercial-building-by-mr-vikas-0",
-            "url": "/assets/4korners/uploads/featured_projects/e652e3bd4e6b5f0b228a4932.webp",
+            "url": "/assets/4korners/uploads/featured_projects/e652e3bd4e6b5f0b228a4932.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -1928,7 +1928,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-commercial-building-by-mr-vikas-1",
-            "url": "/assets/4korners/uploads/featured_projects/446b4807248f1ebaa3351165.webp",
+            "url": "/assets/4korners/uploads/featured_projects/446b4807248f1ebaa3351165.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -1975,7 +1975,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-commercial-exterior-work-hero",
-        "url": "/assets/4korners/uploads/featured_projects/625f02c6abb4cb0a395b531f.webp",
+        "url": "/assets/4korners/uploads/featured_projects/625f02c6abb4cb0a395b531f.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -2056,7 +2056,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-commercial-exterior-work-0",
-            "url": "/assets/4korners/uploads/featured_projects/625f02c6abb4cb0a395b531f.webp",
+            "url": "/assets/4korners/uploads/featured_projects/625f02c6abb4cb0a395b531f.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -2081,7 +2081,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-commercial-exterior-work-1",
-            "url": "/assets/4korners/uploads/featured_projects/b2af7e03ac0608c1814632fd.webp",
+            "url": "/assets/4korners/uploads/featured_projects/b2af7e03ac0608c1814632fd.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -2106,7 +2106,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-commercial-exterior-work-2",
-            "url": "/assets/4korners/uploads/featured_projects/7f6e7f300ea8e466b969d272.webp",
+            "url": "/assets/4korners/uploads/featured_projects/7f6e7f300ea8e466b969d272.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -2131,7 +2131,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-commercial-exterior-work-3",
-            "url": "/assets/4korners/uploads/featured_projects/d63ff49eee5de5e0e50347a9.webp",
+            "url": "/assets/4korners/uploads/featured_projects/d63ff49eee5de5e0e50347a9.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -2178,7 +2178,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-dcm-hospital-hero",
-        "url": "/assets/4korners/uploads/featured_projects/78e41bc7daf9ca8a9c9eb891.webp",
+        "url": "/assets/4korners/uploads/featured_projects/78e41bc7daf9ca8a9c9eb891.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -2259,7 +2259,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-dcm-hospital-0",
-            "url": "/assets/4korners/uploads/featured_projects/78e41bc7daf9ca8a9c9eb891.webp",
+            "url": "/assets/4korners/uploads/featured_projects/78e41bc7daf9ca8a9c9eb891.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -2284,7 +2284,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-dcm-hospital-1",
-            "url": "/assets/4korners/uploads/featured_projects/f9738fbbfec15423a363e666.webp",
+            "url": "/assets/4korners/uploads/featured_projects/f9738fbbfec15423a363e666.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -2309,7 +2309,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-dcm-hospital-2",
-            "url": "/assets/4korners/uploads/featured_projects/bf3b04aa4421b754fa7151fe.webp",
+            "url": "/assets/4korners/uploads/featured_projects/bf3b04aa4421b754fa7151fe.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -2356,7 +2356,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-deepak-clinic-hero",
-        "url": "/assets/4korners/uploads/featured_projects/a98ce8ba33311c7e7f867d40.webp",
+        "url": "/assets/4korners/uploads/featured_projects/a98ce8ba33311c7e7f867d40.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -2437,7 +2437,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-deepak-clinic-0",
-            "url": "/assets/4korners/uploads/featured_projects/a98ce8ba33311c7e7f867d40.webp",
+            "url": "/assets/4korners/uploads/featured_projects/a98ce8ba33311c7e7f867d40.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -2462,7 +2462,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-deepak-clinic-1",
-            "url": "/assets/4korners/uploads/featured_projects/b3a5c0c5d6be1d47401ce8e4.webp",
+            "url": "/assets/4korners/uploads/featured_projects/b3a5c0c5d6be1d47401ce8e4.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -2487,7 +2487,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-deepak-clinic-2",
-            "url": "/assets/4korners/uploads/featured_projects/7c8493611d153b7e113fb7ce.webp",
+            "url": "/assets/4korners/uploads/featured_projects/7c8493611d153b7e113fb7ce.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -2534,7 +2534,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-deepti-ji-apos-s-residential-hero",
-        "url": "/assets/4korners/uploads/featured_projects/9774cde80c378473579dcd88.webp",
+        "url": "/assets/4korners/uploads/featured_projects/9774cde80c378473579dcd88.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -2615,7 +2615,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-deepti-ji-apos-s-residential-0",
-            "url": "/assets/4korners/uploads/featured_projects/9774cde80c378473579dcd88.webp",
+            "url": "/assets/4korners/uploads/featured_projects/9774cde80c378473579dcd88.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -2640,7 +2640,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-deepti-ji-apos-s-residential-1",
-            "url": "/assets/4korners/uploads/featured_projects/b4b60522b250c46a970fe2bd.webp",
+            "url": "/assets/4korners/uploads/featured_projects/b4b60522b250c46a970fe2bd.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -2665,7 +2665,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-deepti-ji-apos-s-residential-2",
-            "url": "/assets/4korners/uploads/featured_projects/a853f0758bb67f02b17012e4.webp",
+            "url": "/assets/4korners/uploads/featured_projects/a853f0758bb67f02b17012e4.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -2690,7 +2690,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-deepti-ji-apos-s-residential-3",
-            "url": "/assets/4korners/uploads/featured_projects/3043b361c19d1392fc405d69.webp",
+            "url": "/assets/4korners/uploads/featured_projects/3043b361c19d1392fc405d69.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -2715,7 +2715,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-deepti-ji-apos-s-residential-4",
-            "url": "/assets/4korners/uploads/featured_projects/80d75b04e6fa8438f6bc4692.webp",
+            "url": "/assets/4korners/uploads/featured_projects/80d75b04e6fa8438f6bc4692.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -2762,7 +2762,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-dr-deepak-gangwar-residential-hero",
-        "url": "/assets/4korners/uploads/featured_projects/9e4c1924973262054b367146.webp",
+        "url": "/assets/4korners/uploads/featured_projects/9e4c1924973262054b367146.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -2843,7 +2843,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-dr-deepak-gangwar-residential-0",
-            "url": "/assets/4korners/uploads/featured_projects/9e4c1924973262054b367146.webp",
+            "url": "/assets/4korners/uploads/featured_projects/9e4c1924973262054b367146.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -2868,7 +2868,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-dr-deepak-gangwar-residential-1",
-            "url": "/assets/4korners/uploads/featured_projects/5899dc7bb3d79f7acc9f7824.webp",
+            "url": "/assets/4korners/uploads/featured_projects/5899dc7bb3d79f7acc9f7824.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -2893,7 +2893,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-dr-deepak-gangwar-residential-2",
-            "url": "/assets/4korners/uploads/featured_projects/b4308386d20f71c893383618.webp",
+            "url": "/assets/4korners/uploads/featured_projects/b4308386d20f71c893383618.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -2918,7 +2918,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-dr-deepak-gangwar-residential-3",
-            "url": "/assets/4korners/uploads/featured_projects/8d8ef25dc18832fe622f57bd.webp",
+            "url": "/assets/4korners/uploads/featured_projects/8d8ef25dc18832fe622f57bd.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -2943,7 +2943,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-dr-deepak-gangwar-residential-4",
-            "url": "/assets/4korners/uploads/featured_projects/63a4f853eaaf0e5380272055.webp",
+            "url": "/assets/4korners/uploads/featured_projects/63a4f853eaaf0e5380272055.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -2990,7 +2990,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-dr-jain-residential-hero",
-        "url": "/assets/4korners/uploads/featured_projects/8805e965914ae0dfb3572426.webp",
+        "url": "/assets/4korners/uploads/featured_projects/8805e965914ae0dfb3572426.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -3071,7 +3071,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-dr-jain-residential-0",
-            "url": "/assets/4korners/uploads/featured_projects/8805e965914ae0dfb3572426.webp",
+            "url": "/assets/4korners/uploads/featured_projects/8805e965914ae0dfb3572426.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -3096,7 +3096,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-dr-jain-residential-1",
-            "url": "/assets/4korners/uploads/featured_projects/ccd90bb785c5fb7b25ce4078.webp",
+            "url": "/assets/4korners/uploads/featured_projects/ccd90bb785c5fb7b25ce4078.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -3121,7 +3121,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-dr-jain-residential-2",
-            "url": "/assets/4korners/uploads/featured_projects/eca480cbb92ebdc811d3b439.webp",
+            "url": "/assets/4korners/uploads/featured_projects/eca480cbb92ebdc811d3b439.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -3146,7 +3146,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-dr-jain-residential-3",
-            "url": "/assets/4korners/uploads/featured_projects/c2b34dcc006a470154ffbc4d.webp",
+            "url": "/assets/4korners/uploads/featured_projects/c2b34dcc006a470154ffbc4d.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -3171,7 +3171,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-dr-jain-residential-4",
-            "url": "/assets/4korners/uploads/featured_projects/e54171ee33ff4ff8bc762125.webp",
+            "url": "/assets/4korners/uploads/featured_projects/e54171ee33ff4ff8bc762125.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -3218,7 +3218,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-dr-rohit-shrivastav-residential-hero",
-        "url": "/assets/4korners/uploads/featured_projects/f9dc069da8f5b839ab593152.webp",
+        "url": "/assets/4korners/uploads/featured_projects/f9dc069da8f5b839ab593152.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -3299,7 +3299,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-dr-rohit-shrivastav-residential-0",
-            "url": "/assets/4korners/uploads/featured_projects/f9dc069da8f5b839ab593152.webp",
+            "url": "/assets/4korners/uploads/featured_projects/f9dc069da8f5b839ab593152.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -3324,7 +3324,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-dr-rohit-shrivastav-residential-1",
-            "url": "/assets/4korners/uploads/featured_projects/c99fa99c6c96b555a146cc54.webp",
+            "url": "/assets/4korners/uploads/featured_projects/c99fa99c6c96b555a146cc54.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -3349,7 +3349,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-dr-rohit-shrivastav-residential-2",
-            "url": "/assets/4korners/uploads/featured_projects/73cd7b775e14eb9b48127ef2.webp",
+            "url": "/assets/4korners/uploads/featured_projects/73cd7b775e14eb9b48127ef2.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -3374,7 +3374,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-dr-rohit-shrivastav-residential-3",
-            "url": "/assets/4korners/uploads/featured_projects/6d1963ad3f092449ee412a83.webp",
+            "url": "/assets/4korners/uploads/featured_projects/6d1963ad3f092449ee412a83.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -3399,7 +3399,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-dr-rohit-shrivastav-residential-4",
-            "url": "/assets/4korners/uploads/featured_projects/74583022143960b6b1a87a84.webp",
+            "url": "/assets/4korners/uploads/featured_projects/74583022143960b6b1a87a84.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -3446,7 +3446,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-flower-city-hero",
-        "url": "/assets/4korners/uploads/featured_projects/700bc7f9ec697fd83717e71b.webp",
+        "url": "/assets/4korners/uploads/featured_projects/700bc7f9ec697fd83717e71b.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -3527,7 +3527,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-flower-city-0",
-            "url": "/assets/4korners/uploads/featured_projects/700bc7f9ec697fd83717e71b.webp",
+            "url": "/assets/4korners/uploads/featured_projects/700bc7f9ec697fd83717e71b.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -3552,7 +3552,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-flower-city-1",
-            "url": "/assets/4korners/uploads/featured_projects/2684c3e2deedec7e1156d172.webp",
+            "url": "/assets/4korners/uploads/featured_projects/2684c3e2deedec7e1156d172.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -3577,7 +3577,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-flower-city-2",
-            "url": "/assets/4korners/uploads/featured_projects/a78c37ce247b3e6fd956de62.webp",
+            "url": "/assets/4korners/uploads/featured_projects/a78c37ce247b3e6fd956de62.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -3624,7 +3624,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-front-elevation-work-hero",
-        "url": "/assets/4korners/uploads/featured_projects/f8d2a4a9383009668ff0f868.webp",
+        "url": "/assets/4korners/uploads/featured_projects/f8d2a4a9383009668ff0f868.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -3705,7 +3705,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-front-elevation-work-0",
-            "url": "/assets/4korners/uploads/featured_projects/f8d2a4a9383009668ff0f868.webp",
+            "url": "/assets/4korners/uploads/featured_projects/f8d2a4a9383009668ff0f868.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -3730,7 +3730,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-front-elevation-work-1",
-            "url": "/assets/4korners/uploads/featured_projects/12626960e5ed9edcd4e08e9f.webp",
+            "url": "/assets/4korners/uploads/featured_projects/12626960e5ed9edcd4e08e9f.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -3755,7 +3755,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-front-elevation-work-2",
-            "url": "/assets/4korners/uploads/featured_projects/acbfc75601c748cea9fc686b.webp",
+            "url": "/assets/4korners/uploads/featured_projects/acbfc75601c748cea9fc686b.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -3780,7 +3780,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-front-elevation-work-3",
-            "url": "/assets/4korners/uploads/featured_projects/5a7a19edd31c03d3788b95f6.webp",
+            "url": "/assets/4korners/uploads/featured_projects/5a7a19edd31c03d3788b95f6.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -3805,7 +3805,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-front-elevation-work-4",
-            "url": "/assets/4korners/uploads/featured_projects/a55ac3fcdff156d6e2a18cdd.webp",
+            "url": "/assets/4korners/uploads/featured_projects/a55ac3fcdff156d6e2a18cdd.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -3852,7 +3852,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-maurya-mart-hero",
-        "url": "/assets/4korners/uploads/featured_projects/6276838f28180ae960b1544c.webp",
+        "url": "/assets/4korners/uploads/featured_projects/6276838f28180ae960b1544c.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -3933,7 +3933,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-maurya-mart-0",
-            "url": "/assets/4korners/uploads/featured_projects/6276838f28180ae960b1544c.webp",
+            "url": "/assets/4korners/uploads/featured_projects/6276838f28180ae960b1544c.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -3958,7 +3958,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-maurya-mart-1",
-            "url": "/assets/4korners/uploads/featured_projects/99e09de3d9b7c0c91e67a330.webp",
+            "url": "/assets/4korners/uploads/featured_projects/99e09de3d9b7c0c91e67a330.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -4005,7 +4005,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-moksha-hero",
-        "url": "/assets/4korners/uploads/featured_projects/fe51bafd65408b27dfc572e2.webp",
+        "url": "/assets/4korners/uploads/featured_projects/fe51bafd65408b27dfc572e2.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -4086,7 +4086,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-moksha-0",
-            "url": "/assets/4korners/uploads/featured_projects/fe51bafd65408b27dfc572e2.webp",
+            "url": "/assets/4korners/uploads/featured_projects/fe51bafd65408b27dfc572e2.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -4111,7 +4111,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-moksha-1",
-            "url": "/assets/4korners/uploads/featured_projects/34a275d441b7810081579d44.webp",
+            "url": "/assets/4korners/uploads/featured_projects/34a275d441b7810081579d44.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -4136,7 +4136,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-moksha-2",
-            "url": "/assets/4korners/uploads/featured_projects/842833eaadf60a9fc58701e6.webp",
+            "url": "/assets/4korners/uploads/featured_projects/842833eaadf60a9fc58701e6.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -4161,7 +4161,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-moksha-3",
-            "url": "/assets/4korners/uploads/featured_projects/0c08cf84a288243c166a59d6.webp",
+            "url": "/assets/4korners/uploads/featured_projects/0c08cf84a288243c166a59d6.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -4208,7 +4208,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-nirmaya-multi-speciality-hospital-hero",
-        "url": "/assets/4korners/uploads/featured_projects/31ce57076700812797e2580b.webp",
+        "url": "/assets/4korners/uploads/featured_projects/31ce57076700812797e2580b.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -4289,7 +4289,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-nirmaya-multi-speciality-hospital-0",
-            "url": "/assets/4korners/uploads/featured_projects/31ce57076700812797e2580b.webp",
+            "url": "/assets/4korners/uploads/featured_projects/31ce57076700812797e2580b.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -4314,7 +4314,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-nirmaya-multi-speciality-hospital-1",
-            "url": "/assets/4korners/uploads/featured_projects/0d4ba13a660ebdf4113606c8.webp",
+            "url": "/assets/4korners/uploads/featured_projects/0d4ba13a660ebdf4113606c8.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -4361,7 +4361,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-office-interior-hero",
-        "url": "/assets/4korners/uploads/featured_projects/f32daac9bf5116319ae6beab.webp",
+        "url": "/assets/4korners/uploads/featured_projects/f32daac9bf5116319ae6beab.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -4442,7 +4442,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-office-interior-0",
-            "url": "/assets/4korners/uploads/featured_projects/f32daac9bf5116319ae6beab.webp",
+            "url": "/assets/4korners/uploads/featured_projects/f32daac9bf5116319ae6beab.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -4467,7 +4467,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-office-interior-1",
-            "url": "/assets/4korners/uploads/featured_projects/f02eaf211317d09b49621bcc.webp",
+            "url": "/assets/4korners/uploads/featured_projects/f02eaf211317d09b49621bcc.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -4492,7 +4492,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-office-interior-2",
-            "url": "/assets/4korners/uploads/featured_projects/6869b4a368b2369c21451f37.webp",
+            "url": "/assets/4korners/uploads/featured_projects/6869b4a368b2369c21451f37.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -4517,7 +4517,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-office-interior-3",
-            "url": "/assets/4korners/uploads/featured_projects/a1e1fa4f993a3d140d827f00.webp",
+            "url": "/assets/4korners/uploads/featured_projects/a1e1fa4f993a3d140d827f00.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -4542,7 +4542,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-office-interior-4",
-            "url": "/assets/4korners/uploads/featured_projects/d7505903e9ec5ea01355a289.webp",
+            "url": "/assets/4korners/uploads/featured_projects/d7505903e9ec5ea01355a289.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -4567,7 +4567,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-office-interior-5",
-            "url": "/assets/4korners/uploads/featured_projects/f5356e348b8da3973fa28c8a.webp",
+            "url": "/assets/4korners/uploads/featured_projects/f5356e348b8da3973fa28c8a.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -4592,7 +4592,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-office-interior-6",
-            "url": "/assets/4korners/uploads/featured_projects/ab1d33d46f74298e0e5c7cbd.webp",
+            "url": "/assets/4korners/uploads/featured_projects/ab1d33d46f74298e0e5c7cbd.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -4617,7 +4617,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-office-interior-7",
-            "url": "/assets/4korners/uploads/featured_projects/5b0092d90035e449a1305809.webp",
+            "url": "/assets/4korners/uploads/featured_projects/5b0092d90035e449a1305809.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -4642,7 +4642,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-office-interior-8",
-            "url": "/assets/4korners/uploads/featured_projects/998434707079ca5c241e04d9.webp",
+            "url": "/assets/4korners/uploads/featured_projects/998434707079ca5c241e04d9.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -4689,7 +4689,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-office-interior-hero",
-        "url": "/assets/4korners/uploads/featured_projects/f32daac9bf5116319ae6beab.webp",
+        "url": "/assets/4korners/uploads/featured_projects/f32daac9bf5116319ae6beab.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -4770,7 +4770,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-office-interior-0",
-            "url": "/assets/4korners/uploads/featured_projects/f32daac9bf5116319ae6beab.webp",
+            "url": "/assets/4korners/uploads/featured_projects/f32daac9bf5116319ae6beab.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -4795,7 +4795,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-office-interior-1",
-            "url": "/assets/4korners/uploads/featured_projects/07b272ed87582632013052a1.webp",
+            "url": "/assets/4korners/uploads/featured_projects/07b272ed87582632013052a1.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -4820,7 +4820,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-office-interior-2",
-            "url": "/assets/4korners/uploads/featured_projects/ec63f566406e64bdf9a7f248.webp",
+            "url": "/assets/4korners/uploads/featured_projects/ec63f566406e64bdf9a7f248.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -4867,7 +4867,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-praveen-agarwal-apos-s-residential-hero",
-        "url": "/assets/4korners/uploads/featured_projects/15dbaf80342ad0a6426fb31d.webp",
+        "url": "/assets/4korners/uploads/featured_projects/15dbaf80342ad0a6426fb31d.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -4948,7 +4948,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-praveen-agarwal-apos-s-residential-0",
-            "url": "/assets/4korners/uploads/featured_projects/15dbaf80342ad0a6426fb31d.webp",
+            "url": "/assets/4korners/uploads/featured_projects/15dbaf80342ad0a6426fb31d.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -4973,7 +4973,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-praveen-agarwal-apos-s-residential-1",
-            "url": "/assets/4korners/uploads/featured_projects/a544749a4737b8dc9c56b638.webp",
+            "url": "/assets/4korners/uploads/featured_projects/a544749a4737b8dc9c56b638.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -4998,7 +4998,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-praveen-agarwal-apos-s-residential-2",
-            "url": "/assets/4korners/uploads/featured_projects/db44d1b306fc212a9788a249.webp",
+            "url": "/assets/4korners/uploads/featured_projects/db44d1b306fc212a9788a249.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -5023,7 +5023,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-praveen-agarwal-apos-s-residential-3",
-            "url": "/assets/4korners/uploads/featured_projects/35fb54369935ec55bfd4ebb2.webp",
+            "url": "/assets/4korners/uploads/featured_projects/35fb54369935ec55bfd4ebb2.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -5048,7 +5048,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-praveen-agarwal-apos-s-residential-4",
-            "url": "/assets/4korners/uploads/featured_projects/5a1ee672bab4f0ab9498d25c.webp",
+            "url": "/assets/4korners/uploads/featured_projects/5a1ee672bab4f0ab9498d25c.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -5095,7 +5095,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-pushpanjali-hospital-hero",
-        "url": "/assets/4korners/uploads/featured_projects/dbc5eb5254f5238d445284bc.webp",
+        "url": "/assets/4korners/uploads/featured_projects/dbc5eb5254f5238d445284bc.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -5176,7 +5176,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-pushpanjali-hospital-0",
-            "url": "/assets/4korners/uploads/featured_projects/dbc5eb5254f5238d445284bc.webp",
+            "url": "/assets/4korners/uploads/featured_projects/dbc5eb5254f5238d445284bc.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -5201,7 +5201,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-pushpanjali-hospital-1",
-            "url": "/assets/4korners/uploads/featured_projects/739f31b2ca35ff62e2ed1436.webp",
+            "url": "/assets/4korners/uploads/featured_projects/739f31b2ca35ff62e2ed1436.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -5226,7 +5226,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-pushpanjali-hospital-2",
-            "url": "/assets/4korners/uploads/featured_projects/8158d4540f7fb9069c55f956.webp",
+            "url": "/assets/4korners/uploads/featured_projects/8158d4540f7fb9069c55f956.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -5251,7 +5251,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-pushpanjali-hospital-3",
-            "url": "/assets/4korners/uploads/featured_projects/c523a0b2bf4e5985083ef319.webp",
+            "url": "/assets/4korners/uploads/featured_projects/c523a0b2bf4e5985083ef319.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -5276,7 +5276,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-pushpanjali-hospital-4",
-            "url": "/assets/4korners/uploads/featured_projects/ee7eda82c89b11485023a625.webp",
+            "url": "/assets/4korners/uploads/featured_projects/ee7eda82c89b11485023a625.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -5323,7 +5323,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-sachan-nursing-home-amp-diagnostic-center-hero",
-        "url": "/assets/4korners/uploads/featured_projects/00fe0916ae3fb7cf029f4e86.webp",
+        "url": "/assets/4korners/uploads/featured_projects/00fe0916ae3fb7cf029f4e86.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -5404,7 +5404,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-sachan-nursing-home-amp-diagnostic-center-0",
-            "url": "/assets/4korners/uploads/featured_projects/00fe0916ae3fb7cf029f4e86.webp",
+            "url": "/assets/4korners/uploads/featured_projects/00fe0916ae3fb7cf029f4e86.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -5429,7 +5429,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-sachan-nursing-home-amp-diagnostic-center-1",
-            "url": "/assets/4korners/uploads/featured_projects/9f614cbc8e77cc989bafbf18.webp",
+            "url": "/assets/4korners/uploads/featured_projects/9f614cbc8e77cc989bafbf18.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -5454,7 +5454,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-sachan-nursing-home-amp-diagnostic-center-2",
-            "url": "/assets/4korners/uploads/featured_projects/9a80f5f47f8ead79e4986e2f.webp",
+            "url": "/assets/4korners/uploads/featured_projects/9a80f5f47f8ead79e4986e2f.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -5479,7 +5479,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-sachan-nursing-home-amp-diagnostic-center-3",
-            "url": "/assets/4korners/uploads/featured_projects/f654fd76bbe881a47bffae3c.webp",
+            "url": "/assets/4korners/uploads/featured_projects/f654fd76bbe881a47bffae3c.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -5504,7 +5504,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-sachan-nursing-home-amp-diagnostic-center-4",
-            "url": "/assets/4korners/uploads/featured_projects/29a6d4eb5a28dab46e39dceb.webp",
+            "url": "/assets/4korners/uploads/featured_projects/29a6d4eb5a28dab46e39dceb.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -5551,7 +5551,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-shubham-hospital-by-dr-abhinav-hero",
-        "url": "/assets/4korners/uploads/featured_projects/78e41bc7daf9ca8a9c9eb891.webp",
+        "url": "/assets/4korners/uploads/featured_projects/78e41bc7daf9ca8a9c9eb891.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -5632,7 +5632,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-shubham-hospital-by-dr-abhinav-0",
-            "url": "/assets/4korners/uploads/featured_projects/78e41bc7daf9ca8a9c9eb891.webp",
+            "url": "/assets/4korners/uploads/featured_projects/78e41bc7daf9ca8a9c9eb891.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -5657,7 +5657,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-shubham-hospital-by-dr-abhinav-1",
-            "url": "/assets/4korners/uploads/featured_projects/31ce57076700812797e2580b.webp",
+            "url": "/assets/4korners/uploads/featured_projects/31ce57076700812797e2580b.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -5682,7 +5682,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-shubham-hospital-by-dr-abhinav-2",
-            "url": "/assets/4korners/uploads/featured_projects/dbc5eb5254f5238d445284bc.webp",
+            "url": "/assets/4korners/uploads/featured_projects/dbc5eb5254f5238d445284bc.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -5729,7 +5729,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-sudhir-saxena-ji-apos-s-residential-elevation-hero",
-        "url": "/assets/4korners/uploads/featured_projects/1d35b9a733828d43c56be59f.webp",
+        "url": "/assets/4korners/uploads/featured_projects/1d35b9a733828d43c56be59f.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -5810,7 +5810,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-sudhir-saxena-ji-apos-s-residential-elevation-0",
-            "url": "/assets/4korners/uploads/featured_projects/1d35b9a733828d43c56be59f.webp",
+            "url": "/assets/4korners/uploads/featured_projects/1d35b9a733828d43c56be59f.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -5857,7 +5857,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-varun-ji-apos-s-office-hero",
-        "url": "/assets/4korners/uploads/featured_projects/07b272ed87582632013052a1.webp",
+        "url": "/assets/4korners/uploads/featured_projects/07b272ed87582632013052a1.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -5938,7 +5938,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-varun-ji-apos-s-office-0",
-            "url": "/assets/4korners/uploads/featured_projects/07b272ed87582632013052a1.webp",
+            "url": "/assets/4korners/uploads/featured_projects/07b272ed87582632013052a1.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -5963,7 +5963,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-varun-ji-apos-s-office-1",
-            "url": "/assets/4korners/uploads/featured_projects/039029207f88ba40aedef02f.webp",
+            "url": "/assets/4korners/uploads/featured_projects/039029207f88ba40aedef02f.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -5988,7 +5988,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-varun-ji-apos-s-office-2",
-            "url": "/assets/4korners/uploads/featured_projects/d46ed1a6e92103df874e55bb.webp",
+            "url": "/assets/4korners/uploads/featured_projects/d46ed1a6e92103df874e55bb.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -6013,7 +6013,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-varun-ji-apos-s-office-3",
-            "url": "/assets/4korners/uploads/featured_projects/f9448a4e89dce25a894a02e7.webp",
+            "url": "/assets/4korners/uploads/featured_projects/f9448a4e89dce25a894a02e7.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -6060,7 +6060,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-vikas-jewellers-hero",
-        "url": "/assets/4korners/uploads/featured_projects/fd586e188912e45976732282.webp",
+        "url": "/assets/4korners/uploads/featured_projects/fd586e188912e45976732282.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -6141,7 +6141,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-vikas-jewellers-0",
-            "url": "/assets/4korners/uploads/featured_projects/fd586e188912e45976732282.webp",
+            "url": "/assets/4korners/uploads/featured_projects/fd586e188912e45976732282.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -6166,7 +6166,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-vikas-jewellers-1",
-            "url": "/assets/4korners/uploads/featured_projects/16625cf8dd7250b3a7f7dc02.webp",
+            "url": "/assets/4korners/uploads/featured_projects/16625cf8dd7250b3a7f7dc02.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -6191,7 +6191,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-vikas-jewellers-2",
-            "url": "/assets/4korners/uploads/featured_projects/e72b672a42d56ab543aab0e0.webp",
+            "url": "/assets/4korners/uploads/featured_projects/e72b672a42d56ab543aab0e0.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -6216,7 +6216,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-vikas-jewellers-3",
-            "url": "/assets/4korners/uploads/featured_projects/8849d196f86da55000fbd8f7.webp",
+            "url": "/assets/4korners/uploads/featured_projects/8849d196f86da55000fbd8f7.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -6241,7 +6241,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-vikas-jewellers-4",
-            "url": "/assets/4korners/uploads/featured_projects/8236c5f517353b69d12b239b.webp",
+            "url": "/assets/4korners/uploads/featured_projects/8236c5f517353b69d12b239b.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -6266,7 +6266,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-vikas-jewellers-5",
-            "url": "/assets/4korners/uploads/featured_projects/483c98bf62b6f432747d847c.webp",
+            "url": "/assets/4korners/uploads/featured_projects/483c98bf62b6f432747d847c.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -6313,7 +6313,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-vineet-ji-residential-villa-hero",
-        "url": "/assets/4korners/uploads/featured_projects/3804d26a137abb467919edb4.webp",
+        "url": "/assets/4korners/uploads/featured_projects/3804d26a137abb467919edb4.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -6394,7 +6394,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-vineet-ji-residential-villa-0",
-            "url": "/assets/4korners/uploads/featured_projects/3804d26a137abb467919edb4.webp",
+            "url": "/assets/4korners/uploads/featured_projects/3804d26a137abb467919edb4.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -6419,7 +6419,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-vineet-ji-residential-villa-1",
-            "url": "/assets/4korners/uploads/featured_projects/412dfcbe5990124c478530ad.webp",
+            "url": "/assets/4korners/uploads/featured_projects/412dfcbe5990124c478530ad.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -6444,7 +6444,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-vineet-ji-residential-villa-2",
-            "url": "/assets/4korners/uploads/featured_projects/b5d58a2ddae22765385c7b27.webp",
+            "url": "/assets/4korners/uploads/featured_projects/b5d58a2ddae22765385c7b27.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -6491,7 +6491,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-vinod-goyal-ji-residential-hero",
-        "url": "/assets/4korners/uploads/featured_projects/68fc3bd4d05f81e88f083601.webp",
+        "url": "/assets/4korners/uploads/featured_projects/68fc3bd4d05f81e88f083601.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -6572,7 +6572,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-vinod-goyal-ji-residential-0",
-            "url": "/assets/4korners/uploads/featured_projects/68fc3bd4d05f81e88f083601.webp",
+            "url": "/assets/4korners/uploads/featured_projects/68fc3bd4d05f81e88f083601.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -6597,7 +6597,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-vinod-goyal-ji-residential-1",
-            "url": "/assets/4korners/uploads/featured_projects/f31946b2a7b9cc92a5debb70.webp",
+            "url": "/assets/4korners/uploads/featured_projects/f31946b2a7b9cc92a5debb70.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -6622,7 +6622,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-vinod-goyal-ji-residential-2",
-            "url": "/assets/4korners/uploads/featured_projects/95bc3ef356e3e9239998cb01.webp",
+            "url": "/assets/4korners/uploads/featured_projects/95bc3ef356e3e9239998cb01.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -6669,7 +6669,7 @@ module.exports = {
       },
       "asset": {
         "_id": "asset-yadav-bhawan-by-mr-pramod-yadav-hero",
-        "url": "/assets/4korners/uploads/featured_projects/28d8309f8013345b386edd55.webp",
+        "url": "/assets/4korners/uploads/featured_projects/28d8309f8013345b386edd55.avif",
         "metadata": {
           "dimensions": {
             "_type": "sanity.imageDimensions",
@@ -6750,7 +6750,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-yadav-bhawan-by-mr-pramod-yadav-0",
-            "url": "/assets/4korners/uploads/featured_projects/28d8309f8013345b386edd55.webp",
+            "url": "/assets/4korners/uploads/featured_projects/28d8309f8013345b386edd55.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -6775,7 +6775,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-yadav-bhawan-by-mr-pramod-yadav-1",
-            "url": "/assets/4korners/uploads/featured_projects/b1053d28df9a02e317c61a19.webp",
+            "url": "/assets/4korners/uploads/featured_projects/b1053d28df9a02e317c61a19.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -6800,7 +6800,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-yadav-bhawan-by-mr-pramod-yadav-2",
-            "url": "/assets/4korners/uploads/featured_projects/5d1da2cee28fb20c0cabd93e.webp",
+            "url": "/assets/4korners/uploads/featured_projects/5d1da2cee28fb20c0cabd93e.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -6825,7 +6825,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-yadav-bhawan-by-mr-pramod-yadav-3",
-            "url": "/assets/4korners/uploads/featured_projects/7932ed07b0fdf2f349b9979d.webp",
+            "url": "/assets/4korners/uploads/featured_projects/7932ed07b0fdf2f349b9979d.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",
@@ -6850,7 +6850,7 @@ module.exports = {
           "_type": "image",
           "asset": {
             "_id": "asset-yadav-bhawan-by-mr-pramod-yadav-4",
-            "url": "/assets/4korners/uploads/featured_projects/d03adfb7b070cbddd9e7f71b.webp",
+            "url": "/assets/4korners/uploads/featured_projects/d03adfb7b070cbddd9e7f71b.avif",
             "metadata": {
               "dimensions": {
                 "_type": "sanity.imageDimensions",

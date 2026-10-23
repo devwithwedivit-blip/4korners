@@ -6916,7 +6916,7 @@ module.exports = {
   "portrait": {
     "asset": {
       "_id": "portrait-4korners",
-      "url": "/assets/4korners/uploads/hero-images/e163957c9991ae41c1cad5b321980f71.webp",
+      "url": "/assets/4korners/uploads/hero-images/e163957c9991ae41c1cad5b321980f71.avif",
       "metadata": {
         "dimensions": {
           "_type": "sanity.imageDimensions",

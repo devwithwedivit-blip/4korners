@@ -1,7 +1,6 @@
 /**
- * Vercel build script: copies assets/4korners/ and cdn.sanity.io/ into
- * the output directory (www.mathildedechiara.com/) so they are served
- * as static files at /assets/4korners/* and /cdn.sanity.io/*
+ * Vercel build script: copies assets/4korners/ into the output directory so
+ * it is served as static files at /assets/4korners/*.
  */
 const fs = require('fs');
 const path = require('path');
@@ -11,7 +10,7 @@ const OUT = path.join(ROOT, 'www.mathildedechiara.com');
 
 function copyDirSync(src, dest) {
   if (!fs.existsSync(src)) {
-    console.log(`  SKIP (not found): ${src}`);
+    console.log('  SKIP (not found): ' + src);
     return 0;
   }
   fs.mkdirSync(dest, { recursive: true });
@@ -29,18 +28,14 @@ function copyDirSync(src, dest) {
   return count;
 }
 
-console.log('=== Vercel Build: copying static assets into output directory ===');
-
-// 1. Copy assets/4korners/ → www.mathildedechiara.com/assets/4korners/
-const src4k = path.join(ROOT, 'assets', '4korners');
-const dest4k = path.join(OUT, 'assets', '4korners');
-const count4k = copyDirSync(src4k, dest4k);
-console.log(`  assets/4korners: ${count4k} files copied`);
-
-// 2. Copy cdn.sanity.io/ → www.mathildedechiara.com/cdn.sanity.io/
-const srcCdn = path.join(ROOT, 'cdn.sanity.io');
-const destCdn = path.join(OUT, 'cdn.sanity.io');
-const countCdn = copyDirSync(srcCdn, destCdn);
-console.log(`  cdn.sanity.io: ${countCdn} files copied`);
-
+console.log('=== Vercel Build: copying client assets into output directory ===');
+const count = copyDirSync(
+  path.join(ROOT, 'assets', '4korners'),
+  path.join(OUT, 'assets', '4korners')
+);
+console.log('  assets/4korners: ' + count + ' files copied');
+if (count === 0) {
+  console.error('ERROR: no client assets were copied. Failing the build.');
+  process.exit(1);
+}
 console.log('=== Build complete ===');

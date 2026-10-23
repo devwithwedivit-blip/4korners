@@ -1,2 +1,4 @@
+server.js
+cdn.sanity.io/
 node_modules/
 .cache/

@@ -113,6 +113,6 @@ module.exports = (req, res) => {
   const responseData = resolveGroqQuery(query, reqUrl.searchParams, baseUrl);
 
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
-  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
+  res.setHeader('Cache-Control', 'public, max-age=300, s-maxage=3600, stale-while-revalidate=86400');
   res.status(200).json(responseData);
 };

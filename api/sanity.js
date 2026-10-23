@@ -2,7 +2,7 @@
  * Vercel Serverless Function: /sanity-api/[...path]
  * Replicates the Sanity API mock from server.js for the Vercel deployment.
  */
-const data_4korners = require('../../data_4korners.js');
+const data_4korners = require('../data_4korners.js');
 
 function resolveGroqQuery(queryStr, searchParams, baseUrl) {
   let query = queryStr || '';

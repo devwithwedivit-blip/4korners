@@ -4,14 +4,14 @@
   "rewrites": [
     {
       "source": "/sanity-api/:path*",
-      "destination": "/api/sanity-api/:path*"
+      "destination": "/api/sanity"
     },
     {
       "source": "/4-korners-logo.html",
       "destination": "/4%20KORNERS%20DESIGN%20STUDIO%20WITHOUT%20BACKGROUND.html"
     },
     {
-      "source": "/((?!assets/|fonts/|cdn\\.sanity\\.io/|favicon|apple-touch|icon-|site\\.webmanifest|4%20KORNERS)(?!.*\\.[\\w]+$).*)",
+      "source": "/((?!api/|assets/|fonts/|cdn\\.sanity\\.io/|favicon|apple-touch|icon-|site\\.webmanifest|4%20KORNERS)(?!.*\\.[\\w]+$).*)",
       "destination": "/index.html"
     }
   ],

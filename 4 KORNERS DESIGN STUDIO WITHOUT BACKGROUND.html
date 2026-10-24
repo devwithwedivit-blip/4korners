@@ -182,12 +182,19 @@ scene.add(new THREE.Points(dgeo, new THREE.PointsMaterial({size:0.05, color:0x9a
 
 // Pointer interactions
 const mouse = new THREE.Vector2(), ray = new THREE.Raycaster(), plane = new THREE.Plane(new THREE.Vector3(0,0,1), 0), hit = new THREE.Vector3();
-let active = false;
-addEventListener('pointermove', e => { mouse.set(e.clientX/innerWidth*2-1, -(e.clientY/innerHeight)*2+1); active = true; wakeUp(); }, { passive: true });
-addEventListener('pointerdown', e => { mouse.set(e.clientX/innerWidth*2-1, -(e.clientY/innerHeight)*2+1); active = true; wakeUp(); }, { passive: true });
-addEventListener('pointerup', e => { if (e.pointerType !== 'mouse') active = false; }, { passive: true });
-addEventListener('pointercancel', () => active = false, { passive: true });
-document.documentElement.addEventListener('mouseleave', () => active = false, { passive: true });
+let active = false, moveTimer = null;
+function onPointerActivity(e) {
+  mouse.set(e.clientX/innerWidth*2-1, -(e.clientY/innerHeight)*2+1);
+  active = true;
+  wakeUp();
+  if (moveTimer) clearTimeout(moveTimer);
+  moveTimer = setTimeout(() => { active = false; }, 200);
+}
+addEventListener('pointermove', onPointerActivity, { passive: true });
+addEventListener('pointerdown', onPointerActivity, { passive: true });
+addEventListener('pointerup', () => { active = false; if (moveTimer) clearTimeout(moveTimer); }, { passive: true });
+addEventListener('pointercancel', () => { active = false; if (moveTimer) clearTimeout(moveTimer); }, { passive: true });
+document.documentElement.addEventListener('mouseleave', () => { active = false; mouse.set(0, 0); if (moveTimer) clearTimeout(moveTimer); }, { passive: true });
 
 // Forward wheel events to parent window
 addEventListener('wheel', e => {
@@ -226,7 +233,7 @@ addEventListener('resize', () => {
   resizeTimer = setTimeout(updateProjection, 100);
 }, { passive: true });
 
-const RADIUS = 0.7, PUSH = 0.07, SPRING = 0.014, DAMP = 0.91;
+const RADIUS = 0.7, PUSH = 0.07, SPRING = 0.024, DAMP = 0.88;
 const ph = new THREE.Vector3(), SW = {on:false, x:0, y:0, age:0};
 let wasActive = false, mvx = 0, mvy = 0, spd = 0;
 addEventListener('pointerdown', () => {
@@ -279,6 +286,7 @@ function tick(now){
   const ring = SW.on ? SW.age*0.14 : 0;
   if (SW.on && ++SW.age > 60) SW.on = false;
 
+  let maxDisp = 0;
   for (let i = 0; i < N; i++) {
     const k = i*3;
     let vx = vel[k], vy = vel[k+1], vz = vel[k+2];
@@ -300,21 +308,11 @@ function tick(now){
       }
     }
     vx += (home[k]-pos[k])*SPRING; vy += (home[k+1]-pos[k+1])*SPRING; vz += (home[k+2]-pos[k+2])*SPRING;
-
-    // Soft walls
-    let qx = pos[k]-CX, qy = pos[k+1]-CY, qz = pos[k+2]-CZ, t;
-    if (qx > SX) { t = (qx-SX)*IX; vx -= t*t*WALL; } else if (qx < -SX) { t = (-SX-qx)*IX; vx -= t*t*WALL; }
-    if (qy > SY) { t = (qy-SY)*IY; vy -= t*t*WALL; } else if (qy < -SY) { t = (-SY-qy)*IY; vy -= t*t*WALL; }
-    if (qz > SZ) { t = (qz-SZ)*IZ; vz -= t*t*WALL; } else if (qz < -SZ) { t = (-SZ-qz)*IZ; vz += t*t*WALL; }
     vx *= DAMP; vy *= DAMP; vz *= DAMP;
-    qx += vx; qy += vy; qz += vz;
-
-    // Hard walls
-    if (qx > HX) { qx = HX; if (vx > 0) vx *= -REBOUND; } else if (qx < -HX) { qx = -HX; if (vx < 0) vx *= -REBOUND; }
-    if (qy > HY) { qy = HY; if (vy > 0) vy *= -REBOUND; } else if (qy < -HY) { qy = -HY; if (vy < 0) vy *= -REBOUND; }
-    if (qz > HZ) { qz = HZ; if (vz > 0) vz *= -REBOUND; } else if (qz < -HZ) { qz = -HZ; if (vz < 0) vz *= -REBOUND; }
+    pos[k] += vx; pos[k+1] += vy; pos[k+2] += vz;
     vel[k] = vx; vel[k+1] = vy; vel[k+2] = vz;
-    pos[k] = qx + CX; pos[k+1] = qy + CY; pos[k+2] = qz + CZ;
+    const disp = Math.abs(home[k]-pos[k]) + Math.abs(home[k+1]-pos[k+1]);
+    if (disp > maxDisp) maxDisp = disp;
   }
 
   for (let i = 0; i < DN; i++) {
@@ -338,10 +336,10 @@ function tick(now){
     } catch (e) {}
   }
 
-  // Auto-rest: When undisturbed for ~60 frames after initial settle, sleep simulation
-  if (!active && !SW.on && Math.abs(mvx) < 0.0005 && Math.abs(mvy) < 0.0005 && hasRenderedFirstFrame) {
+  // Auto-rest: When undisturbed and particles have fully retracted home, sleep simulation
+  if (!active && !SW.on && Math.abs(mvx) < 0.0005 && Math.abs(mvy) < 0.0005 && maxDisp < 0.03 && hasRenderedFirstFrame) {
     restFrames++;
-    if (restFrames > 75) {
+    if (restFrames > 45) {
       isResting = true;
       animFrameId = null;
       return;

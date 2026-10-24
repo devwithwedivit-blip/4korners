@@ -163,7 +163,8 @@ const server = http.createServer(async (req, res) => {
     if (responseData.result !== null) {
       res.writeHead(200, {
         'Content-Type': 'application/json; charset=utf-8',
-        'Cache-Control': 'no-store, no-cache, must-revalidate'
+        'Cache-Control': 'no-store, no-cache, must-revalidate',
+        'Access-Control-Allow-Origin': '*'
       });
       res.end(JSON.stringify(responseData));
       return;
@@ -172,7 +173,8 @@ const server = http.createServer(async (req, res) => {
     // No external proxy - return empty result for unrecognized queries
     res.writeHead(200, {
       'Content-Type': 'application/json; charset=utf-8',
-      'Cache-Control': 'no-store, no-cache, must-revalidate'
+      'Cache-Control': 'no-store, no-cache, must-revalidate',
+      'Access-Control-Allow-Origin': '*'
     });
     res.end(JSON.stringify({ result: null }));
     return;
@@ -281,7 +283,8 @@ const server = http.createServer(async (req, res) => {
     const isAsset = pathname.startsWith('/assets/') || pathname.startsWith('/fonts/') || /\.(avif|webp|png|jpe?g|woff2?|css|js)$/i.test(potentialFile);
     res.writeHead(200, {
       'Content-Type': getMime(potentialFile),
-      'Cache-Control': isAsset ? 'public, max-age=86400' : 'no-cache'
+      'Cache-Control': isAsset ? 'public, max-age=86400' : 'no-cache',
+      'Access-Control-Allow-Origin': '*'
     });
     fs.createReadStream(potentialFile).pipe(res);
     return;

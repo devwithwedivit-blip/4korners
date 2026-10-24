@@ -2,6 +2,7 @@ import { r as React, j as jsxRuntime, b as useParams } from "./vendor-react-Bfwr
 import { g as gsap } from "./vendor-gsap-B0CNlIB4.js";
 import {
   h as hasPendingHeroMorph,
+  k as cleanupHeroMorph,
   H as heroMorphEvent,
   d as fetchProject,
   r as gsapTweenOut,
@@ -260,6 +261,7 @@ function Project() {
     return () => {
       clearTimeout(timer);
       clearTimeout(timer2);
+      cleanupHeroMorph();
     };
   }, [slug]);
 

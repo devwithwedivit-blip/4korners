@@ -4,6 +4,7 @@
   "description": "Portfolio website for 4 Korners Design Studio",
   "main": "server.js",
   "scripts": {
+    "build": "node scripts/vercel-build.js",
     "start": "node server.js"
   },
   "keywords": [

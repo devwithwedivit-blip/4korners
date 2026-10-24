@@ -244,6 +244,21 @@ const server = http.createServer(async (req, res) => {
       return;
     }
 
+    // Proxy upstream to real Sanity CDN (with query params)
+    const upstreamUrl = 'https://cdn.sanity.io/' + relPath + (parsedUrl.search || '');
+    try {
+      const upstreamRes = await fetch(upstreamUrl);
+      if (upstreamRes.ok) {
+        const buffer = Buffer.from(await upstreamRes.arrayBuffer());
+        res.writeHead(upstreamRes.status, {
+          'Content-Type': upstreamRes.headers.get('content-type') || 'image/jpeg',
+          'Cache-Control': 'public, max-age=86400'
+        });
+        res.end(buffer);
+        return;
+      }
+    } catch (err) {}
+
     res.writeHead(404, { 'Content-Type': 'text/plain' });
     res.end('Image not found');
     return;

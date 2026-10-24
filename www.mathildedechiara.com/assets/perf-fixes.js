@@ -101,29 +101,82 @@
   // 4. Project Page Lifecycle & Image Optimization
   function optimizeImages() {
     const imgs = document.querySelectorAll('img');
+    const vh = window.innerHeight || 800;
     for (let i = 0; i < imgs.length; i++) {
       const img = imgs[i];
       if (!img.decoding) img.decoding = 'async';
-      if (img.closest && img.closest('.project-page')) {
-        if (i === 0) {
-          img.fetchPriority = 'high';
-        } else {
-          img.loading = 'lazy';
-        }
-        if (!img.style.aspectRatio && img.naturalWidth && img.naturalHeight) {
-          img.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`;
-        }
+      
+      const rect = img.getBoundingClientRect();
+      const isAboveFold = rect.top < vh && rect.bottom > 0;
+      
+      if (i === 0 || isAboveFold) {
+        if (!img.loading) img.loading = 'eager';
+      } else {
+        if (!img.loading) img.loading = 'lazy';
+      }
+      
+      if (!img.style.aspectRatio && img.naturalWidth && img.naturalHeight) {
+        img.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`;
       }
     }
   }
 
-  // 5. Route Change Observer
+  // 5. Clean up animations & listeners on route change (GSAP, ScrollTrigger, Lenis)
+  function cleanupRouteAnimations() {
+    try {
+      if (window.gsap) {
+        window.gsap.killTweensOf('.project-page, .project-carousel-track, .page-content, .home-page__crosshair');
+      }
+      if (window.ScrollTrigger) {
+        const triggers = window.ScrollTrigger.getAll();
+        for (let i = 0; i < triggers.length; i++) {
+          const st = triggers[i];
+          if (!st.trigger || !document.contains(st.trigger)) {
+            st.kill();
+          }
+        }
+        window.ScrollTrigger.refresh();
+      }
+      if (window.lenis && typeof window.lenis.scrollTo === 'function') {
+        window.lenis.scrollTo(0, { immediate: true });
+      }
+    } catch (err) {}
+  }
+
+  // 6. Graceful Error Boundary with Retry
+  function setupErrorBoundary() {
+    function showErrorNotice(err) {
+      if (document.querySelector('.site-error-boundary-banner')) return;
+      const banner = document.createElement('div');
+      banner.className = 'site-error-boundary-banner';
+      banner.setAttribute('role', 'alert');
+      banner.innerHTML = '<div class="site-error-boundary-content"><p>Unable to load content. Please retry.</p><button type="button" class="site-error-boundary-retry-btn">Retry</button></div>';
+      banner.querySelector('button').addEventListener('click', function() {
+        banner.remove();
+        location.reload();
+      });
+      document.body.appendChild(banner);
+    }
+
+    window.addEventListener('unhandledrejection', function(e) {
+      if (e && e.reason) {
+        const msg = String(e.reason.message || e.reason);
+        if (msg.includes('Sanity query failed') || msg.includes('Failed to fetch') || msg.includes('NetworkError')) {
+          e.preventDefault();
+          showErrorNotice(e.reason);
+        }
+      }
+    });
+  }
+
+  // 7. Route Change Observer
   let lastPath = location.pathname;
   function onRouteChange() {
     const currentPath = location.pathname;
     if (currentPath !== lastPath) {
       lastPath = currentPath;
       window.scrollTo(0, 0);
+      cleanupRouteAnimations();
     }
     updateLogoActivity();
     setupIntroObserver();
@@ -162,6 +215,7 @@
 
   function initObserver() {
     if (document.body) {
+      setupErrorBoundary();
       routeObserver.observe(document.body, { childList: true, subtree: true });
       setupIntroObserver();
       optimizeImages();

@@ -114,7 +114,8 @@ function ProjectCarousel({ images, projectTitle }) {
             transition: prefersReducedMotion ? "none" : "transform 0.7s cubic-bezier(0.65, 0, 0.35, 1)"
           },
           children: images.map((img, idx) => {
-            const url = img.url || (img.asset && img.asset.url) || (img.image && img.image.asset && img.image.asset.url) || "";
+            const rawUrl = img.url || (img.asset && img.asset.url) || (img.image && img.image.asset && img.image.asset.url) || "";
+            const url = (rawUrl.includes("sanity.io") || rawUrl.startsWith("/cdn.sanity.io/")) ? (rawUrl + (rawUrl.includes("?") ? "&" : "?") + "w=1200&auto=format&q=70&fit=max") : rawUrl;
             const alt = (img.alt && (img.alt.en || img.alt)) || `${projectTitle} - photo ${idx + 1}`;
             return _jsx("div", {
               className: "project-carousel-slide",
@@ -126,7 +127,9 @@ function ProjectCarousel({ images, projectTitle }) {
                 children: _jsx("img", {
                   src: url,
                   alt: alt,
-                  loading: "lazy",
+                  loading: idx === 0 ? "eager" : "lazy",
+                  decoding: "async",
+                  fetchPriority: idx === 0 ? "high" : "auto",
                   draggable: false,
                   className: "project-carousel-slide__img",
                   style: { width: "100%", height: "auto", maxHeight: "75vh", objectFit: "contain", display: "block", borderRadius: "2px", pointerEvents: "none", cursor: "default" }

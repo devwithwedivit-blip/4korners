@@ -6890,7 +6890,7 @@ module.exports = {
       "en": "4 Korners Design Studio offers luxury residential architecture, modern commercial design, hospitality and healthcare architecture across Bareilly, NCR and Delhi. Led by Ar. Vibhor Agarwal.",
       "fr": "4 Korners Design Studio propose une architecture résidentielle de luxe, un design commercial moderne et des projets hôteliers à Bareilly et NCR par Ar. Vibhor Agarwal."
     },
-    "image": "/assets/4korners/uploads/hero-images/c4ab8af54056f8da2aacaa5208c0a9a6.webp"
+    "image": "/assets/4korners/uploads/hero-images/c4ab8af54056f8da2aacaa5208c0a9a6.avif"
   }
 },
   homepage: {
@@ -6903,7 +6903,7 @@ module.exports = {
       "en": "Transforming vision into architectural reality. 250+ completed luxury villas, commercial towers, boutique hotels and clinics across 8+ cities.",
       "fr": "Transformer la vision en réalité architecturale. Plus de 250 projets de luxe réalisés dans 8 villes."
     },
-    "image": "/assets/4korners/uploads/hero-images/c4ab8af54056f8da2aacaa5208c0a9a6.webp"
+    "image": "/assets/4korners/uploads/hero-images/c4ab8af54056f8da2aacaa5208c0a9a6.avif"
   }
 },
   aboutPage: {

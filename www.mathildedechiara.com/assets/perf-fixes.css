@@ -1,0 +1,44 @@
+/* ==========================================================================
+   Performance Optimizations & Lifecycle Fixes
+   ========================================================================== */
+
+/* 1. Intro iframe: hidden until first WebGL frame signals readiness */
+html:not(.logo-ready) iframe.site-intro-3d-iframe,
+html:not(.logo-ready) iframe[src*="WITHOUT"] {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+html.logo-ready iframe.site-intro-3d-iframe,
+html.logo-ready iframe[src*="WITHOUT"] {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: opacity 0.4s cubic-bezier(0.2, 0, 0, 1) !important;
+}
+
+/* 2. Container sizing and aspect ratio to prevent CLS */
+.site-intro-right {
+  contain: layout paint;
+}
+
+/* 3. Smooth scroll single mechanism: instant transitions on route change */
+html {
+  scroll-behavior: auto !important;
+}
+
+/* 4. Project gallery optimization: content-visibility for offscreen sections */
+.project-carousel-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 600px;
+}
+
+.project-carousel-slide__img {
+  content-visibility: auto;
+  contain-intrinsic-size: 500px;
+}
+
+/* 5. Clean will-change usage */
+.site-intro-left .intro-line {
+  will-change: transform;
+}

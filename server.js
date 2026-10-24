@@ -263,9 +263,10 @@ const server = http.createServer(async (req, res) => {
   }
 
   if (fs.existsSync(potentialFile) && fs.statSync(potentialFile).isFile()) {
+    const isAsset = pathname.startsWith('/assets/') || pathname.startsWith('/fonts/') || /\.(avif|webp|png|jpe?g|woff2?|css|js)$/i.test(potentialFile);
     res.writeHead(200, {
       'Content-Type': getMime(potentialFile),
-      'Cache-Control': 'no-cache, no-store, must-revalidate'
+      'Cache-Control': isAsset ? 'public, max-age=86400' : 'no-cache'
     });
     fs.createReadStream(potentialFile).pipe(res);
     return;

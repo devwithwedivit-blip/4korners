@@ -15,6 +15,7 @@
         <link rel="preload" href="/assets/villa-day.avif" as="image" type="image/avif" fetchpriority="high" />
         <link rel="preload" href="/assets/villa-night.avif" as="image" type="image/avif" fetchpriority="high" />
         <link rel="stylesheet" href="/assets/villa-transition.css" />
+        <link rel="stylesheet" href="/assets/perf-fixes.css" />
         <style>
           .intro-line {
             align-self: stretch;
@@ -49,8 +50,6 @@
             height: 0 !important;
             overflow: hidden !important;
           }
-          html:not(.logo-ready) iframe[src*="WITHOUT"] { opacity: 0 !important; }
-          html iframe[src*="WITHOUT"] { transition: opacity .5s ease; }
         </style>
       <script type="module" crossorigin src="/assets/index-D88q76o1.js"></script>
       <link rel="modulepreload" crossorigin href="/assets/vendor-react-BfwrijtY.js">
@@ -83,76 +82,6 @@
     </head>
     <body>
         <div id="root"></div>
-        <script>
-          try {
-            (function() {
-              var docEl = document.documentElement;
-              var timer = null;
-              var done = false;
-              function markReady() {
-                if (done) return;
-                done = true;
-                docEl.classList.add("logo-ready");
-                if (observer) {
-                  try { observer.disconnect(); } catch (e) {}
-                }
-              }
-              function onActivity() {
-                if (done) return;
-                if (timer) clearTimeout(timer);
-                timer = setTimeout(markReady, 600);
-              }
-              function isLogoIframe(el) {
-                return el && el.tagName === "IFRAME" && el.src && el.src.indexOf("WITHOUT") !== -1;
-              }
-              function attachIframe(el) {
-                try { el.addEventListener("load", onActivity); } catch (e) {}
-              }
-              var existing = document.querySelectorAll("iframe");
-              for (var i = 0; i < existing.length; i++) {
-                if (isLogoIframe(existing[i])) {
-                  attachIframe(existing[i]);
-                  onActivity();
-                }
-              }
-              var observer = new MutationObserver(function(mutations) {
-                if (done) return;
-                for (var i = 0; i < mutations.length; i++) {
-                  var m = mutations[i];
-                  if (m.type === "childList") {
-                    for (var j = 0; j < m.addedNodes.length; j++) {
-                      var node = m.addedNodes[j];
-                      if (node.nodeType === 1) {
-                        if (isLogoIframe(node)) {
-                          attachIframe(node);
-                          onActivity();
-                        } else if (node.querySelectorAll) {
-                          var nested = node.querySelectorAll("iframe");
-                          for (var k = 0; k < nested.length; k++) {
-                            if (isLogoIframe(nested[k])) {
-                              attachIframe(nested[k]);
-                              onActivity();
-                            }
-                          }
-                        }
-                      }
-                    }
-                  } else if (m.type === "attributes" && m.attributeName === "src") {
-                    if (isLogoIframe(m.target)) {
-                      attachIframe(m.target);
-                      onActivity();
-                    }
-                  }
-                }
-              });
-              observer.observe(document, { childList: true, subtree: true, attributes: true, attributeFilter: ["src"] });
-              window.addEventListener("load", function(e) {
-                if (isLogoIframe(e.target)) onActivity();
-              }, true);
-              onActivity();
-              setTimeout(markReady, 3500);
-            })();
-          } catch (e) {}
-        </script>
+        <script src="/assets/perf-fixes.js" defer></script>
     </body>
 </html>

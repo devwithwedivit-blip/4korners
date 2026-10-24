@@ -6,12 +6,46 @@
  * - Optimizes all images with async decoding and fetchpriority
  */
 (function() {
+  // 0. Guard React DOM unmounting against third-party DOM mutation (SplitType / GSAP / ScrollTrigger pin-spacers)
+  if (typeof Node !== 'undefined' && Node.prototype) {
+    const origRemoveChild = Node.prototype.removeChild;
+    Node.prototype.removeChild = function(child) {
+      if (child && child.parentNode !== this) {
+        if (child.parentNode) {
+          return child.parentNode.removeChild(child);
+        }
+        return child;
+      }
+      return origRemoveChild.apply(this, arguments);
+    };
+
+    const origInsertBefore = Node.prototype.insertBefore;
+    Node.prototype.insertBefore = function(newNode, referenceNode) {
+      if (referenceNode && referenceNode.parentNode !== this) {
+        if (this && typeof this.appendChild === 'function') {
+          return this.appendChild(newNode);
+        }
+        return newNode;
+      }
+      return origInsertBefore.apply(this, arguments);
+    };
+  }
+
   // 1. Manual scroll restoration to prevent native scroll collision with GSAP
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
   }
 
   const docEl = document.documentElement;
+
+  function syncIntroSeenState() {
+    try {
+      if (sessionStorage.getItem('introSeen') === '1') {
+        docEl.classList.add('intro-seen');
+      }
+    } catch (e) {}
+  }
+  syncIntroSeenState();
 
   function getLogoIframe() {
     return document.querySelector('iframe.site-intro-3d-iframe') ||
@@ -50,9 +84,11 @@
 
   function updateLogoActivity() {
     const isProject = !!document.querySelector('.project-page');
+    const isAbout = !!document.querySelector('iframe[src*="about.html"]') || location.pathname.includes('/about');
     const isHidden = document.visibilityState === 'hidden';
+    const isIntroSeen = docEl.classList.contains('intro-seen') || (typeof sessionStorage !== 'undefined' && sessionStorage.getItem('introSeen') === '1');
 
-    if (isProject || isHidden || !introIntersecting || isScrolling) {
+    if (isProject || isAbout || isHidden || isIntroSeen || !introIntersecting || isScrolling) {
       sendToIframe('PAUSE_LOGO');
     } else {
       sendToIframe('RESUME_LOGO');
@@ -173,6 +209,7 @@
   let lastPath = location.pathname;
   function onRouteChange() {
     const currentPath = location.pathname;
+    syncIntroSeenState();
     if (currentPath !== lastPath) {
       lastPath = currentPath;
       window.scrollTo(0, 0);

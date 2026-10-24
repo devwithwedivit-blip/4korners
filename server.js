@@ -245,7 +245,7 @@ const server = http.createServer(async (req, res) => {
     }
 
     // Proxy upstream to real Sanity CDN (with query params)
-    const upstreamUrl = 'https://cdn.sanity.io/' + relPath + (parsedUrl.search || '');
+    const upstreamUrl = 'https://cdn.sanity.io/' + relPath + (reqUrl.search || '');
     try {
       const upstreamRes = await fetch(upstreamUrl);
       if (upstreamRes.ok) {

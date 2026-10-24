@@ -10,34 +10,17 @@ html:not(.logo-ready) iframe[src*="WITHOUT"] {
   pointer-events: none !important;
 }
 
-html.logo-ready .site-intro-section:not([style*="hidden"]) iframe.site-intro-3d-iframe,
-html.logo-ready .site-intro-section:not([style*="hidden"]) iframe[src*="WITHOUT"] {
+html.logo-ready .site-intro-section iframe.site-intro-3d-iframe,
+html.logo-ready .site-intro-section iframe[src*="WITHOUT"] {
   opacity: 1 !important;
   visibility: visible !important;
   transition: opacity 0.4s cubic-bezier(0.2, 0, 0, 1) !important;
 }
 
 /* Ensure hidden/completed intro and 3D logo never block interactive UI elements */
-.site-intro-section[style*="hidden"],
-.site-intro-section[style*="none"],
-.site-intro-section[style*="opacity: 0"],
-.site-intro-section[style*="pointer-events: none"],
-.site-blank-section[style*="hidden"],
-.villa-transition-container[style*="hidden"],
 html.intro-seen .site-intro-section,
 html.intro-seen .site-blank-section,
-html.intro-seen .villa-transition-container {
-  display: none !important;
-  pointer-events: none !important;
-  visibility: hidden !important;
-}
-
-.site-intro-section[style*="hidden"] iframe,
-.site-intro-section[style*="none"] iframe,
-.site-intro-section[style*="opacity: 0"] iframe,
-.site-intro-section[style*="pointer-events: none"] iframe,
-.site-intro-section[style*="hidden"] .site-intro-right,
-.site-intro-section[style*="none"] .site-intro-right,
+html.intro-seen .villa-transition-container,
 html.intro-seen iframe.site-intro-3d-iframe {
   display: none !important;
   pointer-events: none !important;

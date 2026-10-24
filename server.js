@@ -90,10 +90,10 @@ function resolveGroqQuery(queryStr, searchParams, host) {
     return { result: formatData(data_4korners.categories) };
   }
 
-  // 4. Single project query (Dh) - MUST have $slug
-  const hasSlug = (searchParams && (searchParams.has('$slug') || searchParams.has('%24slug'))) || query.includes('$slug');
+  // 4. Single project query (Dh) - MUST have $slug or slug
+  const hasSlug = (searchParams && (searchParams.has('$slug') || searchParams.has('%24slug') || searchParams.has('slug'))) || query.includes('$slug');
   if (hasSlug) {
-    let slugParam = searchParams ? (searchParams.get('$slug') || searchParams.get('%24slug')) : null;
+    let slugParam = searchParams ? (searchParams.get('$slug') || searchParams.get('%24slug') || searchParams.get('slug')) : null;
     if (slugParam) {
       try {
         slugParam = JSON.parse(slugParam);
@@ -102,12 +102,13 @@ function resolveGroqQuery(queryStr, searchParams, host) {
       }
     }
     const cleanSlug = (slugParam || '').trim().toLowerCase();
-    const proj = data_4korners.projects.find(p => 
-      p.slug.en === cleanSlug || 
-      p.slug.fr === cleanSlug || 
-      p.slug.current === cleanSlug || 
-      p._id === `proj-${cleanSlug}`
-    ) || data_4korners.projects[0];
+    const proj = (cleanSlug ? data_4korners.projects.find(p => 
+      p.slug.en.toLowerCase() === cleanSlug || 
+      p.slug.fr.toLowerCase() === cleanSlug || 
+      p.slug.current.toLowerCase() === cleanSlug || 
+      p._id.toLowerCase() === `proj-${cleanSlug}` ||
+      p._id.toLowerCase() === cleanSlug
+    ) : null) || data_4korners.projects[0];
 
     return { result: formatData(proj) };
   }

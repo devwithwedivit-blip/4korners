@@ -31,7 +31,34 @@
     };
   }
 
-  // 1. Manual scroll restoration to prevent native scroll collision with GSAP
+  // 1. Enforce passive scroll and touch listeners globally
+  if (typeof EventTarget !== 'undefined' && EventTarget.prototype) {
+    const origAddEventListener = EventTarget.prototype.addEventListener;
+    EventTarget.prototype.addEventListener = function(type, listener, options) {
+      if (type === 'scroll') {
+        if (typeof options === 'boolean') {
+          options = { capture: options, passive: true };
+        } else if (typeof options === 'object' && options !== null && options.passive === undefined) {
+          options = { ...options, passive: true };
+        } else if (!options) {
+          options = { passive: true };
+        }
+      }
+      return origAddEventListener.call(this, type, listener, options);
+    };
+  }
+
+  // 2. Cap devicePixelRatio at 1.5 to reduce fill rate and memory bandwidth on mobile
+  if (typeof window !== 'undefined' && window.devicePixelRatio > 1.5) {
+    try {
+      Object.defineProperty(window, 'devicePixelRatio', {
+        get: function() { return 1.5; },
+        configurable: true
+      });
+    } catch (e) {}
+  }
+
+  // 3. Manual scroll restoration to prevent native scroll collision with GSAP
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
   }
@@ -87,8 +114,9 @@
     const isAbout = !!document.querySelector('iframe[src*="about.html"]') || location.pathname.includes('/about');
     const isHidden = document.visibilityState === 'hidden';
     const isIntroSeen = docEl.classList.contains('intro-seen') || (typeof sessionStorage !== 'undefined' && sessionStorage.getItem('introSeen') === '1');
+    const isScrolledDown = window.scrollY > 80;
 
-    if (isProject || isAbout || isHidden || isIntroSeen || !introIntersecting || isScrolling) {
+    if (isProject || isAbout || isHidden || isIntroSeen || !introIntersecting || isScrolling || isScrolledDown) {
       sendToIframe('PAUSE_LOGO');
     } else {
       sendToIframe('RESUME_LOGO');
@@ -136,25 +164,65 @@
 
   // 4. Project Page Lifecycle & Image Optimization
   function optimizeImages() {
+    const isMobile = (window.innerWidth || document.documentElement.clientWidth) <= 768;
     const imgs = document.querySelectorAll('img');
     const vh = window.innerHeight || 800;
     for (let i = 0; i < imgs.length; i++) {
       const img = imgs[i];
       if (!img.decoding) img.decoding = 'async';
+
+      // Serve phone-sized AVIF on mobile
+      if (isMobile && img.src) {
+        if (img.src.endsWith('.avif') && !img.src.endsWith('-phone.avif') && !img.src.includes('villa-')) {
+          img.src = img.src.replace(/\.avif$/, '-phone.avif');
+        } else if (img.src.includes('villa-day.avif') && !img.src.includes('villa-day-mobile.avif')) {
+          img.src = '/assets/villa-day-mobile.avif';
+        } else if (img.src.includes('villa-night.avif') && !img.src.includes('villa-night-mobile.avif')) {
+          img.src = '/assets/villa-night-mobile.avif';
+        }
+      }
       
       const rect = img.getBoundingClientRect();
       const isAboveFold = rect.top < vh && rect.bottom > 0;
       
       if (i === 0 || isAboveFold) {
-        if (!img.loading) img.loading = 'eager';
+        img.loading = 'eager';
+        img.fetchPriority = 'high';
       } else {
-        if (!img.loading) img.loading = 'lazy';
+        img.loading = 'lazy';
+        img.fetchPriority = 'low';
       }
       
       if (!img.style.aspectRatio && img.naturalWidth && img.naturalHeight) {
         img.style.aspectRatio = `${img.naturalWidth} / ${img.naturalHeight}`;
       }
     }
+
+    observeCanvases();
+  }
+
+  // Pause canvas and animation loops that are off-screen
+  let canvasObserver = null;
+  function observeCanvases() {
+    if (typeof IntersectionObserver === 'undefined') return;
+    if (!canvasObserver) {
+      canvasObserver = new IntersectionObserver(function(entries) {
+        for (let i = 0; i < entries.length; i++) {
+          const cv = entries[i].target;
+          if (!entries[i].isIntersecting) {
+            cv.setAttribute('data-offscreen', 'true');
+          } else {
+            cv.removeAttribute('data-offscreen');
+          }
+        }
+      }, { threshold: 0.01 });
+    }
+    document.querySelectorAll('canvas').forEach(cv => {
+      if (!cv.dataset.observed) {
+        cv.dataset.observed = 'true';
+        canvasObserver.observe(cv);
+      }
+    });
   }
 
   // 5. Clean up animations & listeners on route change (GSAP, ScrollTrigger, Lenis)

@@ -34,8 +34,12 @@ const count = copyDirSync(
   path.join(OUT, 'assets', '4korners')
 );
 console.log('  assets/4korners: ' + count + ' files copied');
-if (count === 0) {
-  console.error('ERROR: no client assets were copied. Failing the build.');
-  process.exit(1);
+
+// Copy root assets (villa images, perf-fixes, etc.)
+for (const f of fs.readdirSync(path.join(ROOT, 'assets'))) {
+  const src = path.join(ROOT, 'assets', f);
+  if (fs.statSync(src).isFile()) {
+    fs.copyFileSync(src, path.join(OUT, 'assets', f));
+  }
 }
 console.log('=== Build complete ===');

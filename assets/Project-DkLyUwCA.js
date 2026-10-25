@@ -116,7 +116,11 @@ function ProjectCarousel({ images, projectTitle }) {
           },
           children: images.map((img, idx) => {
             const rawUrl = img.url || (img.asset && img.asset.url) || (img.image && img.image.asset && img.image.asset.url) || "";
-            const url = (rawUrl.includes("sanity.io") || rawUrl.startsWith("/cdn.sanity.io/")) ? (rawUrl + (rawUrl.includes("?") ? "&" : "?") + "w=1200&auto=format&q=70&fit=max") : rawUrl;
+            const isSmall = typeof window !== "undefined" && (window.innerWidth || document.documentElement.clientWidth) <= 768;
+            let url = (rawUrl.includes("sanity.io") || rawUrl.startsWith("/cdn.sanity.io/")) ? (rawUrl + (rawUrl.includes("?") ? "&" : "?") + "w=" + (isSmall ? "600" : "1200") + "&auto=format&q=70&fit=max") : rawUrl;
+            if (isSmall && url.endsWith('.avif') && !url.endsWith('-phone.avif')) {
+              url = url.replace(/\.avif$/, '-phone.avif');
+            }
             const alt = (img.alt && (img.alt.en || img.alt)) || `${projectTitle} - photo ${idx + 1}`;
             return _jsx("div", {
               className: "project-carousel-slide",
@@ -128,9 +132,9 @@ function ProjectCarousel({ images, projectTitle }) {
                 children: _jsx("img", {
                   src: url,
                   alt: alt,
-                  loading: idx === 0 ? "eager" : "lazy",
+                  loading: "lazy",
                   decoding: "async",
-                  fetchPriority: idx === 0 ? "high" : "auto",
+                  fetchPriority: "low",
                   draggable: false,
                   className: "project-carousel-slide__img",
                   style: { width: "100%", height: "auto", maxHeight: "75vh", objectFit: "contain", display: "block", borderRadius: "2px", pointerEvents: "none", cursor: "default" }
@@ -416,10 +420,13 @@ function Project() {
       _jsx("div", {
         className: "project-hero-container--redesigned",
         children: heroUrl && _jsx("img", {
-          src: heroUrl,
+          src: (typeof window !== "undefined" && (window.innerWidth || document.documentElement.clientWidth) <= 768 && heroUrl.endsWith('.avif') && !heroUrl.endsWith('-phone.avif')) ? heroUrl.replace(/\.avif$/, '-phone.avif') : heroUrl,
           alt: title,
           className: "project-hero-img--redesigned",
           draggable: false,
+          loading: "eager",
+          fetchPriority: "high",
+          decoding: "async",
           style: { cursor: "default", pointerEvents: "none" }
         })
       }),

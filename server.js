@@ -194,10 +194,19 @@ const server = http.createServer(async (req, res) => {
       }
     }
 
+    // If small screen or phone width is requested, serve phone-sized AVIF
+    const reqWidth = parseInt(reqUrl.searchParams.get('w') || '0', 10);
+    if (reqWidth > 0 && reqWidth <= 800 && localFile.endsWith('.avif') && !localFile.endsWith('-phone.avif')) {
+      const phoneFile = localFile.replace(/\.avif$/, '-phone.avif');
+      if (fs.existsSync(phoneFile)) {
+        localFile = phoneFile;
+      }
+    }
+
     if (fs.existsSync(localFile) && fs.statSync(localFile).isFile()) {
       res.writeHead(200, {
         'Content-Type': getMime(localFile),
-        'Cache-Control': 'public, max-age=86400'
+        'Cache-Control': 'public, max-age=31536000, immutable'
       });
       fs.createReadStream(localFile).pipe(res);
       return;
@@ -284,7 +293,7 @@ const server = http.createServer(async (req, res) => {
     const isAsset = pathname.startsWith('/assets/') || pathname.startsWith('/fonts/') || /\.(avif|webp|png|jpe?g|woff2?|css|js)$/i.test(potentialFile);
     res.writeHead(200, {
       'Content-Type': getMime(potentialFile),
-      'Cache-Control': isAsset ? 'public, max-age=86400' : 'no-cache',
+      'Cache-Control': isAsset ? 'public, max-age=31536000, immutable' : 'no-cache',
       'Access-Control-Allow-Origin': '*'
     });
     fs.createReadStream(potentialFile).pipe(res);

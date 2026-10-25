@@ -41,9 +41,10 @@ function prng() {
   return seedVal / 4294967296;
 }
 
-const N = 320000;
+const isMobileScreen = typeof window !== 'undefined' && window.innerWidth <= 768;
+const N = isMobileScreen ? 80000 : 320000;
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
-renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
 renderer.setSize(window.innerWidth, window.innerHeight);
 
 const canvas = renderer.domElement;
@@ -353,6 +354,27 @@ function tick(now){
 
 // Start loop
 animFrameId = requestAnimationFrame(tick);
+
+// IntersectionObserver: automatically pause particle loop if canvas is off-screen
+try {
+  const offscreenObserver = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) {
+        isPaused = true;
+        if (animFrameId) {
+          cancelAnimationFrame(animFrameId);
+          animFrameId = null;
+        }
+      } else {
+        isPaused = false;
+        if (!animFrameId && !isResting) {
+          animFrameId = requestAnimationFrame(tick);
+        }
+      }
+    }
+  }, { threshold: 0.01 });
+  offscreenObserver.observe(canvas);
+} catch (e) {}
 
 // Lifecycle postMessage listener: pause and resume from parent
 window.addEventListener('message', e => {

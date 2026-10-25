@@ -11,6 +11,7 @@ www.mathildedechiara.com/cdn.sanity.io/
 
 # Ignored audit artifacts
 .baseline/
+.baseline-mobile/
 .perf-compare/
 .phase0-raw/
 .phase3-raw/

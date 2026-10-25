@@ -48,6 +48,25 @@ html {
   contain-intrinsic-size: 500px;
 }
 
+/* Mobile scrolling & transform/opacity animation optimizations */
+@media (max-width: 768px) {
+  html, body {
+    overscroll-behavior-y: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .villa-img {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+  }
+
+  .project-hero-img--redesigned {
+    content-visibility: visible !important;
+    contain: paint;
+    transform: translateZ(0);
+  }
+}
+
 /* 5. Clean will-change usage */
 .site-intro-left .intro-line {
   will-change: transform;
